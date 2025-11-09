@@ -1,0 +1,10270 @@
+// Copyright (C) 2024  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
+
+// DATE "08/19/2025 15:09:21"
+
+// 
+// Device: Altera 10M50DAF484C7G Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module Barrel (
+	A0,
+	A1,
+	A2,
+	A3,
+	sra,
+	rotate,
+	shift1,
+	shift0,
+	value,
+	out0,
+	out1,
+	out2,
+	out3);
+input 	[1:0] A0;
+input 	[1:0] A1;
+input 	[1:0] A2;
+input 	[1:0] A3;
+input 	[1:0] sra;
+input 	[1:0] rotate;
+input 	[1:0] shift1;
+input 	[1:0] shift0;
+input 	[1:0] value;
+output 	[1:0] out0;
+output 	[1:0] out1;
+output 	[1:0] out2;
+output 	[1:0] out3;
+
+// Design Ports Information
+// out0[0]	=>  Location: PIN_Y4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out0[1]	=>  Location: PIN_W3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out1[0]	=>  Location: PIN_R10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out1[1]	=>  Location: PIN_W10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out2[0]	=>  Location: PIN_AA1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out2[1]	=>  Location: PIN_Y3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out3[0]	=>  Location: PIN_Y2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// out3[1]	=>  Location: PIN_W6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// shift0[1]	=>  Location: PIN_W8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// shift0[0]	=>  Location: PIN_Y8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// shift1[1]	=>  Location: PIN_Y5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A2[1]	=>  Location: PIN_V8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A0[1]	=>  Location: PIN_V7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A0[0]	=>  Location: PIN_Y6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// shift1[0]	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A2[0]	=>  Location: PIN_Y7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A1[1]	=>  Location: PIN_AB3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A1[0]	=>  Location: PIN_W9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A3[0]	=>  Location: PIN_U6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// A3[1]	=>  Location: PIN_P9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// rotate[1]	=>  Location: PIN_W4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// rotate[0]	=>  Location: PIN_M8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// value[0]	=>  Location: PIN_W7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sra[0]	=>  Location: PIN_R9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sra[1]	=>  Location: PIN_AB2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// value[1]	=>  Location: PIN_P10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \MUX_shifter2_4|g2|G0|out~0_combout ;
+wire \MUX_shifter2_4|g2|G1|out~1_combout ;
+wire \MUX_shifter2_3|g2|G0|out~0_combout ;
+wire \MUX_shifter2_3|g2|G1|out~1_combout ;
+wire \MUX_shifter2_2|g2|G0|out~0_combout ;
+wire \MUX_shifter2_2|g2|G1|out~1_combout ;
+wire \MUX_shifter2_1|g2|G0|out~0_combout ;
+wire \MUX_shifter2_1|g2|G1|out~1_combout ;
+wire \MUX_shifter2_3|g0|G1|comb~0_combout ;
+wire \MUX_shifter2_4|g0|G1|comb~0_combout ;
+wire \MUX_shifter2_3|g0|G1|comb~1_combout ;
+wire \MUX_shifter1_4|g2|G1|out~1_combout ;
+wire \MUX_shifter1_4|g2|G0|out~0_combout ;
+wire \MUX_shifter1_3|g2|G0|out~0_combout ;
+wire \MUX_shifter1_3|g2|G1|out~1_combout ;
+wire \MUX_shifter1_2|g2|G0|out~0_combout ;
+wire \MUX_shifter1_2|g2|G1|out~1_combout ;
+wire \MUX_shifter_trojan1|g2|G1|out~1_combout ;
+wire \MUX_shifter_trojan1|g2|G0|out~0_combout ;
+wire \MUX_shifter1_1|g2|G1|out~1_combout ;
+wire \MUX_shifter1_1|g2|G0|out~0_combout ;
+wire \MUX_router2_1|g2|G1|out~1_combout ;
+wire \MUX_router2_1|g2|G0|out~0_combout ;
+wire \MUX_shifter1_3|g0|G1|comb~0_combout ;
+wire \MUX_shifter1_3|g0|G1|comb~1_combout ;
+wire \MUX_shifter_trojan1|g1|G1|comb~0_combout ;
+wire \MUX_shifter_trojan1|g1|G1|comb~1_combout ;
+wire \MUX_shifter_trojan1|g1|G1|out~0_combout ;
+wire \MUX_router2_1|g1|G1|comb~0_combout ;
+wire \MUX_router2_1|g1|G1|out~0_combout ;
+wire \OutTrojan|G1|out~1_combout ;
+wire \OutTrojan|G0|out~0_combout ;
+wire \MUX_router1_2|g2|G1|out~1_combout ;
+wire \MUX_router1_2|g2|G0|out~0_combout ;
+wire \trojan05|G0|out~0_combout ;
+wire \MUX_shifter_trojan|g2|G1|out~1_combout ;
+wire \trojan05|G1|out~1_combout ;
+wire \MUX_shifter_trojan|g2|G0|out~0_combout ;
+wire \MUX_router1_1|g2|G1|out~1_combout ;
+wire \MUX_router1_1|g2|G0|out~0_combout ;
+wire \MUX_sra|g2|G0|out~0_combout ;
+wire \MUX_sra|g2|G1|out~1_combout ;
+wire \trojan02|G0|out~0_combout ;
+wire \trojan04|G0|out~0_combout ;
+wire \trojan03|G0|out~0_combout ;
+wire \trojan03|G1|out~1_combout ;
+wire \trojan04|G1|out~1_combout ;
+wire \trojan01|G0|out~0_combout ;
+wire \trojan01|G1|out~1_combout ;
+wire \trojan02|G1|out~1_combout ;
+wire \shift0[1]~input_o ;
+wire \shift0[0]~input_o ;
+wire \shift1[1]~input_o ;
+wire \A2[1]~input_o ;
+wire \A0[1]~input_o ;
+wire \A0[0]~input_o ;
+wire \shift1[0]~input_o ;
+wire \A2[0]~input_o ;
+wire \A1[1]~input_o ;
+wire \A1[0]~input_o ;
+wire \A3[0]~input_o ;
+wire \A3[1]~input_o ;
+wire \rotate[1]~input_o ;
+wire \rotate[0]~input_o ;
+wire \value[0]~input_o ;
+wire \sra[0]~input_o ;
+wire \sra[1]~input_o ;
+wire \value[1]~input_o ;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \~QUARTUS_CREATED_UNVM~~busy ;
+wire \~ALTERA_TMS~~ibuf_o ;
+wire \~ALTERA_TMS~~padout ;
+wire \~ALTERA_TCK~~ibuf_o ;
+wire \~ALTERA_TCK~~padout ;
+wire \~ALTERA_TDI~~ibuf_o ;
+wire \~ALTERA_TDI~~padout ;
+wire \~ALTERA_TDO~~padout ;
+wire \~ALTERA_CONFIG_SEL~~ibuf_o ;
+wire \~ALTERA_CONFIG_SEL~~padout ;
+wire \~ALTERA_nCONFIG~~ibuf_o ;
+wire \~ALTERA_nCONFIG~~padout ;
+wire \~ALTERA_nSTATUS~~ibuf_o ;
+wire \~ALTERA_nSTATUS~~padout ;
+wire \~ALTERA_CONF_DONE~~ibuf_o ;
+wire \~ALTERA_CONF_DONE~~padout ;
+wire \~QUARTUS_CREATED_ADC1~~eoc ;
+wire \~QUARTUS_CREATED_ADC2~~eoc ;
+wire \rotate[0]~inputclkctrl_outclk ;
+wire \~ALTERA_TDO~~obuf_o ;
+
+
+MUX2to1_NCL_13 MUX_sra(
+	.out(\MUX_sra|g2|G0|out~0_combout ),
+	.out1(\MUX_sra|g2|G1|out~1_combout ),
+	.A3_0(\A3[0]~input_o ),
+	.A3_1(\A3[1]~input_o ),
+	.value_0(\value[0]~input_o ),
+	.sra_0(\sra[0]~input_o ),
+	.sra_1(\sra[1]~input_o ),
+	.value_1(\value[1]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_1 MUX_router1_2(
+	.comb(\MUX_router2_1|g1|G1|comb~0_combout ),
+	.out(\MUX_router2_1|g1|G1|out~0_combout ),
+	.out1(\MUX_router1_2|g2|G1|out~1_combout ),
+	.out2(\MUX_router1_2|g2|G0|out~0_combout ),
+	.out4(\MUX_sra|g2|G0|out~0_combout ),
+	.out3(\MUX_sra|g2|G1|out~1_combout ),
+	.A0_1(\A0[1]~input_o ),
+	.A0_0(\A0[0]~input_o ),
+	.rotate_1(\rotate[1]~input_o ),
+	.rotate_0(\rotate[0]~input_o ),
+	.rotate_01(\rotate[0]~inputclkctrl_outclk ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL MUX_router1_1(
+	.comb(\MUX_router2_1|g1|G1|comb~0_combout ),
+	.out(\MUX_router2_1|g1|G1|out~0_combout ),
+	.out1(\MUX_router1_1|g2|G1|out~1_combout ),
+	.out2(\MUX_router1_1|g2|G0|out~0_combout ),
+	.out3(\MUX_sra|g2|G1|out~1_combout ),
+	.out4(\MUX_sra|g2|G0|out~0_combout ),
+	.A1_1(\A1[1]~input_o ),
+	.A1_0(\A1[0]~input_o ),
+	.rotate_1(\rotate[1]~input_o ),
+	.rotate_0(\rotate[0]~input_o ),
+	.rotate_01(\rotate[0]~inputclkctrl_outclk ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_3 MUX_shifter1_1(
+	.out(\MUX_shifter1_1|g2|G1|out~1_combout ),
+	.out1(\MUX_shifter1_1|g2|G0|out~0_combout ),
+	.comb(\MUX_shifter1_3|g0|G1|comb~0_combout ),
+	.comb1(\MUX_shifter1_3|g0|G1|comb~1_combout ),
+	.out2(\MUX_router1_1|g2|G1|out~1_combout ),
+	.out3(\MUX_router1_1|g2|G0|out~0_combout ),
+	.shift1_1(\shift1[1]~input_o ),
+	.shift1_0(\shift1[0]~input_o ),
+	.A3_0(\A3[0]~input_o ),
+	.A3_1(\A3[1]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_6 MUX_shifter1_4(
+	.out(\MUX_shifter1_4|g2|G1|out~1_combout ),
+	.out1(\MUX_shifter1_4|g2|G0|out~0_combout ),
+	.comb(\MUX_shifter1_3|g0|G1|comb~0_combout ),
+	.shift1_1(\shift1[1]~input_o ),
+	.A2_1(\A2[1]~input_o ),
+	.A0_1(\A0[1]~input_o ),
+	.A0_0(\A0[0]~input_o ),
+	.shift1_0(\shift1[0]~input_o ),
+	.A2_0(\A2[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_5 MUX_shifter1_3(
+	.out(\MUX_shifter1_3|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter1_3|g2|G1|out~1_combout ),
+	.comb(\MUX_shifter1_3|g0|G1|comb~0_combout ),
+	.comb1(\MUX_shifter1_3|g0|G1|comb~1_combout ),
+	.shift1_1(\shift1[1]~input_o ),
+	.shift1_0(\shift1[0]~input_o ),
+	.A1_1(\A1[1]~input_o ),
+	.A1_0(\A1[0]~input_o ),
+	.A3_0(\A3[0]~input_o ),
+	.A3_1(\A3[1]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_28 trojan01(
+	.comb(\MUX_shifter1_3|g0|G1|comb~0_combout ),
+	.out(\trojan01|G0|out~0_combout ),
+	.out1(\trojan01|G1|out~1_combout ),
+	.shift0_1(\shift0[1]~input_o ),
+	.shift0_0(\shift0[0]~input_o ),
+	.shift1_1(\shift1[1]~input_o ),
+	.shift1_0(\shift1[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_14 OutTrojan(
+	.comb(\MUX_shifter1_3|g0|G1|comb~0_combout ),
+	.out(\OutTrojan|G1|out~1_combout ),
+	.out1(\OutTrojan|G0|out~0_combout ),
+	.out2(\trojan02|G0|out~0_combout ),
+	.out3(\trojan02|G1|out~1_combout ),
+	.shift1_1(\shift1[1]~input_o ),
+	.shift1_0(\shift1[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_4 MUX_shifter1_2(
+	.out(\MUX_shifter1_2|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter1_2|g2|G1|out~1_combout ),
+	.out2(\OutTrojan|G1|out~1_combout ),
+	.out3(\OutTrojan|G0|out~0_combout ),
+	.out4(\MUX_router1_2|g2|G1|out~1_combout ),
+	.out5(\MUX_router1_2|g2|G0|out~0_combout ),
+	.A2_1(\A2[1]~input_o ),
+	.A2_0(\A2[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_29 trojan02(
+	.out(\trojan02|G0|out~0_combout ),
+	.out1(\trojan01|G0|out~0_combout ),
+	.out2(\trojan01|G1|out~1_combout ),
+	.out3(\trojan02|G1|out~1_combout ),
+	.rotate_1(\rotate[1]~input_o ),
+	.rotate_0(\rotate[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_2 MUX_router2_1(
+	.out(\MUX_shifter1_4|g2|G1|out~1_combout ),
+	.out1(\MUX_shifter1_4|g2|G0|out~0_combout ),
+	.out2(\MUX_router2_1|g2|G1|out~1_combout ),
+	.out3(\MUX_router2_1|g2|G0|out~0_combout ),
+	.comb(\MUX_router2_1|g1|G1|comb~0_combout ),
+	.out4(\MUX_router2_1|g1|G1|out~0_combout ),
+	.out5(\MUX_sra|g2|G0|out~0_combout ),
+	.out6(\MUX_sra|g2|G1|out~1_combout ),
+	.rotate_1(\rotate[1]~input_o ),
+	.rotate_0(\rotate[0]~input_o ),
+	.rotate_01(\rotate[0]~inputclkctrl_outclk ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_7 MUX_shifter2_1(
+	.out(\MUX_shifter2_1|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter2_1|g2|G1|out~1_combout ),
+	.comb(\MUX_shifter2_3|g0|G1|comb~0_combout ),
+	.out2(\MUX_shifter1_1|g2|G1|out~1_combout ),
+	.out3(\MUX_shifter1_1|g2|G0|out~0_combout ),
+	.out4(\MUX_router2_1|g2|G1|out~1_combout ),
+	.out5(\MUX_router2_1|g2|G0|out~0_combout ),
+	.shift0_1(\shift0[1]~input_o ),
+	.shift0_0(\shift0[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_9 MUX_shifter2_3(
+	.out(\MUX_shifter2_3|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter2_3|g2|G1|out~1_combout ),
+	.comb(\MUX_shifter2_3|g0|G1|comb~0_combout ),
+	.comb1(\MUX_shifter2_4|g0|G1|comb~0_combout ),
+	.comb2(\MUX_shifter2_3|g0|G1|comb~1_combout ),
+	.out2(\MUX_shifter1_3|g2|G0|out~0_combout ),
+	.out3(\MUX_shifter1_3|g2|G1|out~1_combout ),
+	.out4(\MUX_shifter1_2|g2|G0|out~0_combout ),
+	.out5(\MUX_shifter1_2|g2|G1|out~1_combout ),
+	.shift0_1(\shift0[1]~input_o ),
+	.shift0_0(\shift0[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_31 trojan04(
+	.out(\MUX_shifter1_4|g2|G1|out~1_combout ),
+	.out1(\MUX_shifter1_4|g2|G0|out~0_combout ),
+	.out2(\MUX_shifter1_3|g2|G0|out~0_combout ),
+	.out3(\MUX_shifter1_3|g2|G1|out~1_combout ),
+	.out4(\trojan04|G0|out~0_combout ),
+	.out5(\trojan04|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_30 trojan03(
+	.out(\MUX_shifter1_2|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter1_2|g2|G1|out~1_combout ),
+	.out2(\MUX_shifter1_1|g2|G1|out~1_combout ),
+	.out3(\MUX_shifter1_1|g2|G0|out~0_combout ),
+	.comb(\MUX_shifter_trojan1|g1|G1|comb~0_combout ),
+	.out4(\trojan03|G0|out~0_combout ),
+	.out5(\trojan03|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_10 MUX_shifter2_4(
+	.out(\MUX_shifter2_4|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter2_4|g2|G1|out~1_combout ),
+	.comb(\MUX_shifter2_3|g0|G1|comb~0_combout ),
+	.comb1(\MUX_shifter2_4|g0|G1|comb~0_combout ),
+	.out2(\MUX_shifter1_4|g2|G1|out~1_combout ),
+	.out3(\MUX_shifter1_4|g2|G0|out~0_combout ),
+	.out4(\MUX_shifter1_3|g2|G0|out~0_combout ),
+	.out5(\MUX_shifter1_3|g2|G1|out~1_combout ),
+	.shift0_1(\shift0[1]~input_o ),
+	.shift0_0(\shift0[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_32 trojan05(
+	.out(\trojan05|G0|out~0_combout ),
+	.out1(\trojan05|G1|out~1_combout ),
+	.out2(\trojan04|G0|out~0_combout ),
+	.out3(\trojan03|G0|out~0_combout ),
+	.out4(\trojan03|G1|out~1_combout ),
+	.out5(\trojan04|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_11 MUX_shifter_trojan(
+	.out(\MUX_shifter1_1|g2|G1|out~1_combout ),
+	.out8(\MUX_shifter1_1|g2|G0|out~0_combout ),
+	.comb(\MUX_shifter_trojan1|g1|G1|comb~0_combout ),
+	.comb1(\MUX_shifter_trojan1|g1|G1|comb~1_combout ),
+	.out1(\MUX_shifter_trojan1|g1|G1|out~0_combout ),
+	.out2(\trojan05|G0|out~0_combout ),
+	.out3(\MUX_shifter_trojan|g2|G1|out~1_combout ),
+	.out4(\trojan05|G1|out~1_combout ),
+	.out5(\MUX_shifter_trojan|g2|G0|out~0_combout ),
+	.out6(\MUX_sra|g2|G0|out~0_combout ),
+	.out7(\MUX_sra|g2|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_12 MUX_shifter_trojan1(
+	.out(\MUX_shifter_trojan1|g2|G1|out~1_combout ),
+	.out1(\MUX_shifter_trojan1|g2|G0|out~0_combout ),
+	.out2(\MUX_shifter1_1|g2|G1|out~1_combout ),
+	.out3(\MUX_shifter1_1|g2|G0|out~0_combout ),
+	.comb(\MUX_shifter_trojan1|g1|G1|comb~0_combout ),
+	.comb1(\MUX_shifter_trojan1|g1|G1|comb~1_combout ),
+	.out4(\MUX_shifter_trojan1|g1|G1|out~0_combout ),
+	.out5(\trojan05|G0|out~0_combout ),
+	.out6(\MUX_shifter_trojan|g2|G1|out~1_combout ),
+	.out7(\trojan05|G1|out~1_combout ),
+	.out8(\MUX_shifter_trojan|g2|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+MUX2to1_NCL_8 MUX_shifter2_2(
+	.out(\MUX_shifter2_2|g2|G0|out~0_combout ),
+	.out1(\MUX_shifter2_2|g2|G1|out~1_combout ),
+	.comb(\MUX_shifter2_3|g0|G1|comb~0_combout ),
+	.comb1(\MUX_shifter2_3|g0|G1|comb~1_combout ),
+	.out2(\MUX_shifter1_2|g2|G0|out~0_combout ),
+	.out3(\MUX_shifter1_2|g2|G1|out~1_combout ),
+	.out4(\MUX_shifter_trojan1|g2|G1|out~1_combout ),
+	.out5(\MUX_shifter_trojan1|g2|G0|out~0_combout ),
+	.shift0_1(\shift0[1]~input_o ),
+	.shift0_0(\shift0[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOIBUF_X24_Y0_N1
+fiftyfivenm_io_ibuf \shift0[1]~input (
+	.i(shift0[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\shift0[1]~input_o ));
+// synopsys translate_off
+defparam \shift0[1]~input .bus_hold = "false";
+defparam \shift0[1]~input .listen_to_nsleep_signal = "false";
+defparam \shift0[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y0_N1
+fiftyfivenm_io_ibuf \shift0[0]~input (
+	.i(shift0[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\shift0[0]~input_o ));
+// synopsys translate_off
+defparam \shift0[0]~input .bus_hold = "false";
+defparam \shift0[0]~input .listen_to_nsleep_signal = "false";
+defparam \shift0[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X18_Y0_N1
+fiftyfivenm_io_ibuf \shift1[1]~input (
+	.i(shift1[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\shift1[1]~input_o ));
+// synopsys translate_off
+defparam \shift1[1]~input .bus_hold = "false";
+defparam \shift1[1]~input .listen_to_nsleep_signal = "false";
+defparam \shift1[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y0_N15
+fiftyfivenm_io_ibuf \A2[1]~input (
+	.i(A2[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A2[1]~input_o ));
+// synopsys translate_off
+defparam \A2[1]~input .bus_hold = "false";
+defparam \A2[1]~input .listen_to_nsleep_signal = "false";
+defparam \A2[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y0_N22
+fiftyfivenm_io_ibuf \A0[1]~input (
+	.i(A0[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A0[1]~input_o ));
+// synopsys translate_off
+defparam \A0[1]~input .bus_hold = "false";
+defparam \A0[1]~input .listen_to_nsleep_signal = "false";
+defparam \A0[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y0_N29
+fiftyfivenm_io_ibuf \A0[0]~input (
+	.i(A0[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A0[0]~input_o ));
+// synopsys translate_off
+defparam \A0[0]~input .bus_hold = "false";
+defparam \A0[0]~input .listen_to_nsleep_signal = "false";
+defparam \A0[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X18_Y0_N22
+fiftyfivenm_io_ibuf \shift1[0]~input (
+	.i(shift1[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\shift1[0]~input_o ));
+// synopsys translate_off
+defparam \shift1[0]~input .bus_hold = "false";
+defparam \shift1[0]~input .listen_to_nsleep_signal = "false";
+defparam \shift1[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X20_Y0_N8
+fiftyfivenm_io_ibuf \A2[0]~input (
+	.i(A2[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A2[0]~input_o ));
+// synopsys translate_off
+defparam \A2[0]~input .bus_hold = "false";
+defparam \A2[0]~input .listen_to_nsleep_signal = "false";
+defparam \A2[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X22_Y0_N8
+fiftyfivenm_io_ibuf \A1[1]~input (
+	.i(A1[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A1[1]~input_o ));
+// synopsys translate_off
+defparam \A1[1]~input .bus_hold = "false";
+defparam \A1[1]~input .listen_to_nsleep_signal = "false";
+defparam \A1[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X22_Y0_N1
+fiftyfivenm_io_ibuf \A1[0]~input (
+	.i(A1[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A1[0]~input_o ));
+// synopsys translate_off
+defparam \A1[0]~input .bus_hold = "false";
+defparam \A1[0]~input .listen_to_nsleep_signal = "false";
+defparam \A1[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X16_Y0_N8
+fiftyfivenm_io_ibuf \A3[0]~input (
+	.i(A3[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A3[0]~input_o ));
+// synopsys translate_off
+defparam \A3[0]~input .bus_hold = "false";
+defparam \A3[0]~input .listen_to_nsleep_signal = "false";
+defparam \A3[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X22_Y0_N22
+fiftyfivenm_io_ibuf \A3[1]~input (
+	.i(A3[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\A3[1]~input_o ));
+// synopsys translate_off
+defparam \A3[1]~input .bus_hold = "false";
+defparam \A3[1]~input .listen_to_nsleep_signal = "false";
+defparam \A3[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X18_Y0_N15
+fiftyfivenm_io_ibuf \rotate[1]~input (
+	.i(rotate[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\rotate[1]~input_o ));
+// synopsys translate_off
+defparam \rotate[1]~input .bus_hold = "false";
+defparam \rotate[1]~input .listen_to_nsleep_signal = "false";
+defparam \rotate[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y18_N15
+fiftyfivenm_io_ibuf \rotate[0]~input (
+	.i(rotate[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\rotate[0]~input_o ));
+// synopsys translate_off
+defparam \rotate[0]~input .bus_hold = "false";
+defparam \rotate[0]~input .listen_to_nsleep_signal = "false";
+defparam \rotate[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X24_Y0_N8
+fiftyfivenm_io_ibuf \value[0]~input (
+	.i(value[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\value[0]~input_o ));
+// synopsys translate_off
+defparam \value[0]~input .bus_hold = "false";
+defparam \value[0]~input .listen_to_nsleep_signal = "false";
+defparam \value[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X22_Y0_N29
+fiftyfivenm_io_ibuf \sra[0]~input (
+	.i(sra[0]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\sra[0]~input_o ));
+// synopsys translate_off
+defparam \sra[0]~input .bus_hold = "false";
+defparam \sra[0]~input .listen_to_nsleep_signal = "false";
+defparam \sra[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X22_Y0_N15
+fiftyfivenm_io_ibuf \sra[1]~input (
+	.i(sra[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\sra[1]~input_o ));
+// synopsys translate_off
+defparam \sra[1]~input .bus_hold = "false";
+defparam \sra[1]~input .listen_to_nsleep_signal = "false";
+defparam \sra[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X26_Y0_N8
+fiftyfivenm_io_ibuf \value[1]~input (
+	.i(value[1]),
+	.ibar(gnd),
+	.nsleep(vcc),
+	.o(\value[1]~input_o ));
+// synopsys translate_off
+defparam \value[1]~input .bus_hold = "false";
+defparam \value[1]~input .listen_to_nsleep_signal = "false";
+defparam \value[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X44_Y51_N24
+fiftyfivenm_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+// \~QUARTUS_CREATED_GND~I_combout  = GND
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.cout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 16'h0000;
+defparam \~QUARTUS_CREATED_GND~I .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: CLKCTRL_G3
+fiftyfivenm_clkctrl \rotate[0]~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\rotate[0]~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\rotate[0]~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \rotate[0]~inputclkctrl .clock_type = "global clock";
+defparam \rotate[0]~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: IOOBUF_X24_Y0_N16
+fiftyfivenm_io_obuf \out0[0]~output (
+	.i(\MUX_shifter2_4|g2|G0|out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out0[0]),
+	.obar());
+// synopsys translate_off
+defparam \out0[0]~output .bus_hold = "false";
+defparam \out0[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y0_N9
+fiftyfivenm_io_obuf \out0[1]~output (
+	.i(\MUX_shifter2_4|g2|G1|out~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out0[1]),
+	.obar());
+// synopsys translate_off
+defparam \out0[1]~output .bus_hold = "false";
+defparam \out0[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y0_N16
+fiftyfivenm_io_obuf \out1[0]~output (
+	.i(\MUX_shifter2_3|g2|G0|out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out1[0]),
+	.obar());
+// synopsys translate_off
+defparam \out1[0]~output .bus_hold = "false";
+defparam \out1[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X24_Y0_N30
+fiftyfivenm_io_obuf \out1[1]~output (
+	.i(\MUX_shifter2_3|g2|G1|out~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out1[1]),
+	.obar());
+// synopsys translate_off
+defparam \out1[1]~output .bus_hold = "false";
+defparam \out1[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X18_Y0_N30
+fiftyfivenm_io_obuf \out2[0]~output (
+	.i(\MUX_shifter2_2|g2|G0|out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out2[0]),
+	.obar());
+// synopsys translate_off
+defparam \out2[0]~output .bus_hold = "false";
+defparam \out2[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X24_Y0_N23
+fiftyfivenm_io_obuf \out2[1]~output (
+	.i(\MUX_shifter2_2|g2|G1|out~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out2[1]),
+	.obar());
+// synopsys translate_off
+defparam \out2[1]~output .bus_hold = "false";
+defparam \out2[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y0_N16
+fiftyfivenm_io_obuf \out3[0]~output (
+	.i(\MUX_shifter2_1|g2|G0|out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out3[0]),
+	.obar());
+// synopsys translate_off
+defparam \out3[0]~output .bus_hold = "false";
+defparam \out3[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X16_Y0_N30
+fiftyfivenm_io_obuf \out3[1]~output (
+	.i(\MUX_shifter2_1|g2|G1|out~1_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(out3[1]),
+	.obar());
+// synopsys translate_off
+defparam \out3[1]~output .bus_hold = "false";
+defparam \out3[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: UNVM_X0_Y40_N40
+fiftyfivenm_unvm \~QUARTUS_CREATED_UNVM~ (
+	.arclk(vcc),
+	.arshft(vcc),
+	.drclk(vcc),
+	.drshft(vcc),
+	.drdin(vcc),
+	.nprogram(vcc),
+	.nerase(vcc),
+	.nosc_ena(\~QUARTUS_CREATED_GND~I_combout ),
+	.par_en(vcc),
+	.xe_ye(\~QUARTUS_CREATED_GND~I_combout ),
+	.se(\~QUARTUS_CREATED_GND~I_combout ),
+	.ardin(23'b11111111111111111111111),
+	.busy(\~QUARTUS_CREATED_UNVM~~busy ),
+	.osc(),
+	.bgpbusy(),
+	.sp_pass(),
+	.se_pass(),
+	.drdout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range1_end_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range1_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range2_end_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range2_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .addr_range3_offset = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .is_compressed_image = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .is_dual_boot = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .is_eram_skip = "false";
+defparam \~QUARTUS_CREATED_UNVM~ .max_ufm_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .max_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .min_ufm_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .min_valid_addr = -1;
+defparam \~QUARTUS_CREATED_UNVM~ .part_name = "quartus_created_unvm";
+defparam \~QUARTUS_CREATED_UNVM~ .reserve_block = "true";
+// synopsys translate_on
+
+// Location: ADCBLOCK_X43_Y52_N0
+fiftyfivenm_adcblock \~QUARTUS_CREATED_ADC1~ (
+	.soc(\~QUARTUS_CREATED_GND~I_combout ),
+	.usr_pwd(vcc),
+	.tsen(\~QUARTUS_CREATED_GND~I_combout ),
+	.clkin_from_pll_c0(gnd),
+	.chsel({\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout }),
+	.eoc(\~QUARTUS_CREATED_ADC1~~eoc ),
+	.dout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_ADC1~ .analog_input_pin_mask = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .clkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .device_partname_fivechar_prefix = "none";
+defparam \~QUARTUS_CREATED_ADC1~ .is_this_first_or_second_adc = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .prescalar = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .pwd = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .refsel = 0;
+defparam \~QUARTUS_CREATED_ADC1~ .reserve_block = "true";
+defparam \~QUARTUS_CREATED_ADC1~ .testbits = 66;
+defparam \~QUARTUS_CREATED_ADC1~ .tsclkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC1~ .tsclksel = 0;
+// synopsys translate_on
+
+// Location: ADCBLOCK_X43_Y51_N0
+fiftyfivenm_adcblock \~QUARTUS_CREATED_ADC2~ (
+	.soc(\~QUARTUS_CREATED_GND~I_combout ),
+	.usr_pwd(vcc),
+	.tsen(\~QUARTUS_CREATED_GND~I_combout ),
+	.clkin_from_pll_c0(gnd),
+	.chsel({\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout ,\~QUARTUS_CREATED_GND~I_combout }),
+	.eoc(\~QUARTUS_CREATED_ADC2~~eoc ),
+	.dout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_ADC2~ .analog_input_pin_mask = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .clkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .device_partname_fivechar_prefix = "none";
+defparam \~QUARTUS_CREATED_ADC2~ .is_this_first_or_second_adc = 2;
+defparam \~QUARTUS_CREATED_ADC2~ .prescalar = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .pwd = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .refsel = 0;
+defparam \~QUARTUS_CREATED_ADC2~ .reserve_block = "true";
+defparam \~QUARTUS_CREATED_ADC2~ .testbits = 66;
+defparam \~QUARTUS_CREATED_ADC2~ .tsclkdiv = 1;
+defparam \~QUARTUS_CREATED_ADC2~ .tsclksel = 0;
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	A1_1,
+	A1_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+output 	out1;
+output 	out2;
+input 	out3;
+input 	out4;
+input 	A1_1;
+input 	A1_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_OR g2(
+	.out(out1),
+	.out1(out2),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~0_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND g0(
+	.out(\g0|G0|out~0_combout ),
+	.out1(\g0|G1|out~1_combout ),
+	.A1_1(A1_1),
+	.A1_0(A1_0),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_1 g1(
+	.comb(comb),
+	.out(out),
+	.out1(out3),
+	.out4(out4),
+	.out2(\g1|G1|out~0_combout ),
+	.out3(\g1|G0|out~0_combout ),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND (
+	out,
+	out1,
+	A1_1,
+	A1_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	A1_1;
+input 	A1_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd G1(
+	.out(out1),
+	.A1_1(A1_1),
+	.A1_0(A1_0),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22 G0(
+	.out(out),
+	.A1_1(A1_1),
+	.rotate_1(rotate_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22 (
+	out,
+	A1_1,
+	rotate_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A1_1;
+input 	rotate_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\rotate[1]~input_o  & ((\A1[1]~input_o ) # (out))) # (!\rotate[1]~input_o  & (\A1[1]~input_o  & out))
+
+	.dataa(rotate_1),
+	.datab(gnd),
+	.datac(A1_1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd (
+	out,
+	A1_1,
+	A1_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A1_1;
+input 	A1_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y2_N30
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((\A1[1]~input_o  & ((out) # (GLOBAL(\rotate[0]~inputclkctrl_outclk )))))
+
+	.dataa(\out~0_combout ),
+	.datab(A1_1),
+	.datac(out),
+	.datad(rotate_01),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y2_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((\rotate[1]~input_o ) # ((\rotate[0]~input_o ) # (\A1[0]~input_o )))) # (!out & (\A1[0]~input_o  & ((\rotate[1]~input_o ) # (\rotate[0]~input_o ))))
+
+	.dataa(rotate_1),
+	.datab(rotate_0),
+	.datac(out),
+	.datad(A1_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_1 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+input 	out1;
+output 	out2;
+output 	out3;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_1 G0(
+	.out(out1),
+	.out1(out3),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_1 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_1 (
+	out,
+	out1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = (out1 & ((\rotate[0]~input_o ) # (out))) # (!out1 & (\rotate[0]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(rotate_0),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_1 (
+	comb,
+	out,
+	out1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+output 	out1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = ((out1 & comb)) # (!out)
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(comb),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hC0FF;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_2 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_2 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_2 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out1) # (out))) # (!out & (out1 & out))
+
+	.dataa(out),
+	.datab(out1),
+	.datac(out2),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hE8E8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_2 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y2_N12
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out1))))
+
+	.dataa(out),
+	.datab(\out~0_combout ),
+	.datac(out4),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCEC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N30
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out1) # ((out1) # (out)))) # (!out & (out & ((out1) # (out1))))
+
+	.dataa(out2),
+	.datab(out3),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_1 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	A0_1,
+	A0_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+output 	out1;
+output 	out2;
+input 	out3;
+input 	out4;
+input 	A0_1;
+input 	A0_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_2 g0(
+	.out(\g0|G0|out~0_combout ),
+	.out1(\g0|G1|out~1_combout ),
+	.A0_1(A0_1),
+	.A0_0(A0_0),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_3 g1(
+	.comb(comb),
+	.out(out),
+	.out1(out3),
+	.out4(out4),
+	.out2(\g1|G1|out~0_combout ),
+	.out3(\g1|G0|out~0_combout ),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_1 g2(
+	.out(out1),
+	.out1(out2),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~0_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_2 (
+	out,
+	out1,
+	A0_1,
+	A0_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	A0_1;
+input 	A0_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_3 G1(
+	.out(out1),
+	.A0_1(A0_1),
+	.A0_0(A0_0),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_3 G0(
+	.out(out),
+	.A0_1(A0_1),
+	.rotate_1(rotate_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_3 (
+	out,
+	A0_1,
+	rotate_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A0_1;
+input 	rotate_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\rotate[1]~input_o  & ((out) # (\A0[1]~input_o ))) # (!\rotate[1]~input_o  & (out & \A0[1]~input_o ))
+
+	.dataa(rotate_1),
+	.datab(gnd),
+	.datac(out),
+	.datad(A0_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_3 (
+	out,
+	A0_1,
+	A0_0,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A0_1;
+input 	A0_0;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y3_N24
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((\A0[1]~input_o  & ((out) # (GLOBAL(\rotate[0]~inputclkctrl_outclk )))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(A0_1),
+	.datad(rotate_01),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y3_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A0[0]~input_o  & ((\rotate[1]~input_o ) # ((\rotate[0]~input_o ) # (out)))) # (!\A0[0]~input_o  & (out & ((\rotate[1]~input_o ) # (\rotate[0]~input_o ))))
+
+	.dataa(rotate_1),
+	.datab(rotate_0),
+	.datac(A0_0),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_3 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+input 	out1;
+output 	out2;
+output 	out3;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_4 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_4 G0(
+	.out(out1),
+	.out1(out3),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_4 (
+	out,
+	out1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = (out1 & ((\rotate[0]~input_o ) # (out))) # (!out1 & (\rotate[0]~input_o  & out))
+
+	.dataa(out1),
+	.datab(gnd),
+	.datac(rotate_0),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_4 (
+	comb,
+	out,
+	out1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+output 	out1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N22
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = ((out1 & comb)) # (!out)
+
+	.dataa(out1),
+	.datab(gnd),
+	.datac(comb),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hA0FF;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_1 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_5 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_5 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_5 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out1) # (out))) # (!out & (out1 & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_5 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y2_N24
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out1))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(out4),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y2_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out1) # ((out) # (out1)))) # (!out & (out & ((out1) # (out1))))
+
+	.dataa(out2),
+	.datab(out),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_2 (
+	out,
+	out1,
+	out2,
+	out3,
+	comb,
+	out4,
+	out5,
+	out6,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+output 	out3;
+output 	comb;
+output 	out4;
+input 	out5;
+input 	out6;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_4 g0(
+	.out(out),
+	.out1(out1),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_5 g1(
+	.comb(comb),
+	.out(out4),
+	.out1(\g1|G1|out~1_combout ),
+	.out2(\g1|G0|out~0_combout ),
+	.out3(out5),
+	.out4(out6),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_2 g2(
+	.out(out2),
+	.out1(out3),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~1_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_4 (
+	out,
+	out1,
+	out2,
+	out3,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+output 	out3;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_6 G1(
+	.out(out),
+	.out1(out1),
+	.out2(out3),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.rotate_01(rotate_01),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_6 G0(
+	.out(out),
+	.out1(out2),
+	.rotate_1(rotate_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_6 (
+	out,
+	out1,
+	rotate_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+input 	rotate_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N8
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = (out1 & ((\rotate[1]~input_o ) # (out))) # (!out1 & (\rotate[1]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(rotate_1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_6 (
+	out,
+	out1,
+	out2,
+	rotate_1,
+	rotate_0,
+	rotate_01,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+input 	rotate_1;
+input 	rotate_0;
+input 	rotate_01;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y4_N20
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out2 = (\out~0_combout ) # ((out & ((out2) # (GLOBAL(\rotate[0]~inputclkctrl_outclk )))))
+
+	.dataa(out),
+	.datab(\out~0_combout ),
+	.datac(out2),
+	.datad(rotate_01),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEEC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y4_N30
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((\rotate[1]~input_o ) # ((\rotate[0]~input_o ) # (out2)))) # (!out & (out2 & ((\rotate[1]~input_o ) # (\rotate[0]~input_o ))))
+
+	.dataa(rotate_1),
+	.datab(rotate_0),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_5 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	rotate_1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	out;
+output 	out1;
+output 	out2;
+input 	out3;
+input 	out4;
+input 	rotate_1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_7 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out1),
+	.out2(out3),
+	.out3(out4),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_7 G0(
+	.out(out2),
+	.out1(out4),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_7 (
+	out,
+	out1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\rotate[0]~input_o ) # (out))) # (!out & (\rotate[0]~input_o  & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(rotate_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_7 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	rotate_1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	rotate_1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y2_N12
+fiftyfivenm_lcell_comb \comb~0 (
+// Equation(s):
+// comb = (out) # ((out) # ((\rotate[1]~input_o ) # (\rotate[0]~input_o )))
+
+	.dataa(out2),
+	.datab(out3),
+	.datac(rotate_1),
+	.datad(rotate_0),
+	.cin(gnd),
+	.combout(comb),
+	.cout());
+// synopsys translate_off
+defparam \comb~0 .lut_mask = 16'hFFFE;
+defparam \comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y2_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & (((!\rotate[1]~input_o  & !\rotate[0]~input_o )))) # (!out & (((!\rotate[1]~input_o )) # (!out)))
+
+	.dataa(out2),
+	.datab(out3),
+	.datac(rotate_1),
+	.datad(rotate_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'h151F;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y2_N18
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out1 = ((out1 & comb)) # (!out)
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(comb),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hC0FF;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_2 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_8 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_8 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_8 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out1 & ((out) # (out2))) # (!out1 & (out & out2))
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(out),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_8 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y4_N12
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out2 & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(out4),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y4_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out1 & ((out) # ((out1) # (out)))) # (!out1 & (out & ((out) # (out1))))
+
+	.dataa(out1),
+	.datab(out3),
+	.datac(out2),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEA8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_3 (
+	out,
+	out1,
+	comb,
+	comb1,
+	out2,
+	out3,
+	shift1_1,
+	shift1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	comb;
+input 	comb1;
+input 	out2;
+input 	out3;
+input 	shift1_1;
+input 	shift1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_6 g0(
+	.comb(comb),
+	.out(\g0|G0|out~0_combout ),
+	.out1(\g0|G1|out~1_combout ),
+	.out2(out2),
+	.out3(out3),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_7 g1(
+	.comb(comb1),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_3 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~1_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_6 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift1_1,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift1_1;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_9 G1(
+	.comb(comb),
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_9 G0(
+	.out(out),
+	.out1(out2),
+	.shift1_1(shift1_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_9 (
+	out,
+	out1,
+	shift1_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift1_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[1]~input_o  & ((out) # (out))) # (!\shift1[1]~input_o  & (out & out))
+
+	.dataa(gnd),
+	.datab(shift1_1),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_9 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y2_N28
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (out))))
+
+	.dataa(comb),
+	.datab(out2),
+	.datac(\out~0_combout ),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF5F4;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (out)))) # (!out & (\shift1[0]~input_o  & ((out))))
+
+	.dataa(shift1_0),
+	.datab(out),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_7 (
+	comb,
+	out,
+	out1,
+	shift1_1,
+	shift1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	shift1_1;
+input 	shift1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_10 G0(
+	.out(out1),
+	.shift1_0(shift1_0),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_10 G1(
+	.comb(comb),
+	.out(out),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_10 (
+	out,
+	shift1_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	shift1_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[0]~input_o  & ((out) # (\A3[1]~input_o ))) # (!\shift1[0]~input_o  & (out & \A3[1]~input_o ))
+
+	.dataa(shift1_0),
+	.datab(out),
+	.datac(A3_1),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hE8E8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_10 (
+	comb,
+	out,
+	shift1_1,
+	shift1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	shift1_1;
+input 	shift1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y2_N16
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((comb1 & out))
+
+	.dataa(\out~0_combout ),
+	.datab(gnd),
+	.datac(comb),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAAA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y2_N26
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\shift1[1]~input_o  & ((\A3[0]~input_o ) # ((\A3[1]~input_o )))) # (!\shift1[1]~input_o  & (\A3[0]~input_o  & (\shift1[0]~input_o )))
+
+	.dataa(shift1_1),
+	.datab(A3_0),
+	.datac(shift1_0),
+	.datad(A3_1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEAC8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_3 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_11 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_11 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_11 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_11 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y2_N4
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(out),
+	.datab(\out~0_combout ),
+	.datac(out4),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCEC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out),
+	.datab(out2),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_4 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	A2_1,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	A2_1;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G1|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~2_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_AND_8 g0(
+	.out(\g0|G1|out~0_combout ),
+	.out1(\g0|G1|out~2_combout ),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(out2),
+	.out4(out3),
+	.out5(out4),
+	.out6(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_4 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~2_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_9 g1(
+	.out(\g0|G1|out~0_combout ),
+	.out1(\g1|G1|out~1_combout ),
+	.out2(\g1|G0|out~0_combout ),
+	.out3(out2),
+	.out4(out3),
+	.A2_1(A2_1),
+	.A2_0(A2_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_8 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	out6,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+output 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	out6;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_12 G0(
+	.out(out2),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_12 G1(
+	.out(out),
+	.out1(out1),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.out5(out6),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_12 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out2),
+	.datab(gnd),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_12 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~1_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out) # (out)
+
+	.dataa(out3),
+	.datab(gnd),
+	.datac(out2),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAFA;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N20
+fiftyfivenm_lcell_comb \out~2 (
+// Equation(s):
+// out1 = (\out~1_combout ) # ((out & ((out1) # (out))))
+
+	.dataa(out1),
+	.datab(out5),
+	.datac(\out~1_combout ),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~2 .lut_mask = 16'hFEF0;
+defparam \out~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N8
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// \out~1_combout  = (out1 & (((out) # (out)))) # (!out1 & (out & ((out))))
+
+	.dataa(out3),
+	.datab(out1),
+	.datac(out5),
+	.datad(out4),
+	.cin(gnd),
+	.combout(\out~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEC0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_9 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	A2_1,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+output 	out2;
+input 	out3;
+input 	out4;
+input 	A2_1;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_13 G0(
+	.out(out2),
+	.out1(out4),
+	.A2_1(A2_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_13 G1(
+	.out(out),
+	.out1(out1),
+	.out2(out3),
+	.A2_1(A2_1),
+	.A2_0(A2_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_13 (
+	out,
+	out1,
+	A2_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	A2_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\A2[1]~input_o ) # (out))) # (!out & (\A2[1]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(A2_1),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_13 (
+	out,
+	out1,
+	out2,
+	A2_1,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+input 	out2;
+input 	A2_1;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N26
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out1 = (\out~0_combout ) # ((out1 & ((\A2[0]~input_o ) # (out))) # (!out1 & (\A2[0]~input_o  & out)))
+
+	.dataa(out1),
+	.datab(\out~0_combout ),
+	.datac(A2_0),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEEC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y3_N30
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A2[1]~input_o  & ((out1) # (out)))
+
+	.dataa(out1),
+	.datab(gnd),
+	.datac(A2_1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF0A0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_4 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_14 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_14 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_14 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y3_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out1) # (out1))) # (!out & (out1 & out1))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_14 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N30
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out1 & ((out) # (out))))
+
+	.dataa(out4),
+	.datab(out),
+	.datac(\out~0_combout ),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out1) # (out)))) # (!out & (out & ((out) # (out1))))
+
+	.dataa(out4),
+	.datab(out3),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEC8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_5 (
+	out,
+	out1,
+	comb,
+	comb1,
+	shift1_1,
+	shift1_0,
+	A1_1,
+	A1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+output 	comb;
+output 	comb1;
+input 	shift1_1;
+input 	shift1_0;
+input 	A1_1;
+input 	A1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_OR_5 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_11 g1(
+	.comb(comb),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.A1_1(A1_1),
+	.A1_0(A1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_10 g0(
+	.comb(comb),
+	.comb1(comb1),
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_10 (
+	comb,
+	comb1,
+	out,
+	out1,
+	shift1_1,
+	shift1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	comb1;
+output 	out;
+output 	out1;
+input 	shift1_1;
+input 	shift1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_15 G0(
+	.out(out1),
+	.shift1_1(shift1_1),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_15 G1(
+	.comb(comb),
+	.comb1(comb1),
+	.out(out),
+	.shift1_1(shift1_1),
+	.shift1_0(shift1_0),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_15 (
+	out,
+	shift1_1,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	shift1_1;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N16
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[1]~input_o  & ((out) # (\A3[1]~input_o ))) # (!\shift1[1]~input_o  & (out & \A3[1]~input_o ))
+
+	.dataa(shift1_1),
+	.datab(gnd),
+	.datac(out),
+	.datad(A3_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_15 (
+	comb,
+	comb1,
+	out,
+	shift1_1,
+	shift1_0,
+	A3_0,
+	A3_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	comb1;
+output 	out;
+input 	shift1_1;
+input 	shift1_0;
+input 	A3_0;
+input 	A3_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y3_N22
+fiftyfivenm_lcell_comb \comb~0 (
+// Equation(s):
+// comb = (!\shift1[1]~input_o  & !\shift1[0]~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(shift1_1),
+	.datad(shift1_0),
+	.cin(gnd),
+	.combout(comb),
+	.cout());
+// synopsys translate_off
+defparam \comb~0 .lut_mask = 16'h000F;
+defparam \comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N8
+fiftyfivenm_lcell_comb \comb~1 (
+// Equation(s):
+// comb1 = (\A3[1]~input_o ) # ((\A3[0]~input_o ) # ((\shift1[1]~input_o ) # (\shift1[0]~input_o )))
+
+	.dataa(A3_1),
+	.datab(A3_0),
+	.datac(shift1_1),
+	.datad(shift1_0),
+	.cin(gnd),
+	.combout(comb1),
+	.cout());
+// synopsys translate_off
+defparam \comb~1 .lut_mask = 16'hFFFE;
+defparam \comb~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N30
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & comb1))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(\out~0_combout ),
+	.datad(comb1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A3[0]~input_o  & (((\shift1[1]~input_o ) # (\shift1[0]~input_o )))) # (!\A3[0]~input_o  & (\A3[1]~input_o  & ((\shift1[0]~input_o ))))
+
+	.dataa(A3_1),
+	.datab(A3_0),
+	.datac(shift1_1),
+	.datad(shift1_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_11 (
+	comb,
+	out,
+	out1,
+	shift1_1,
+	shift1_0,
+	A1_1,
+	A1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	shift1_1;
+input 	shift1_0;
+input 	A1_1;
+input 	A1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_16 G1(
+	.comb(comb),
+	.out(out),
+	.shift1_1(shift1_1),
+	.A1_1(A1_1),
+	.A1_0(A1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_16 G0(
+	.out(out1),
+	.shift1_0(shift1_0),
+	.A1_1(A1_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_16 (
+	out,
+	shift1_0,
+	A1_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	shift1_0;
+input 	A1_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N12
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift1[0]~input_o ) # (\A1[1]~input_o ))) # (!out & (\shift1[0]~input_o  & \A1[1]~input_o ))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(shift1_0),
+	.datad(A1_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_16 (
+	comb,
+	out,
+	shift1_1,
+	A1_1,
+	A1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	shift1_1;
+input 	A1_1;
+input 	A1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y2_N8
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (\A1[0]~input_o ))))
+
+	.dataa(out),
+	.datab(comb),
+	.datac(\out~0_combout ),
+	.datad(A1_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF3F2;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A1[1]~input_o  & ((\shift1[1]~input_o ) # ((out)))) # (!\A1[1]~input_o  & (((out & \A1[0]~input_o ))))
+
+	.dataa(A1_1),
+	.datab(shift1_1),
+	.datac(out),
+	.datad(A1_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF8A8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_5 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_17 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_17 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_17 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_17 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y2_N18
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(out4),
+	.datab(out),
+	.datac(\out~0_combout ),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out4),
+	.datab(out3),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEC8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_6 (
+	out,
+	out1,
+	comb,
+	shift1_1,
+	A2_1,
+	A0_1,
+	A0_0,
+	shift1_0,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	comb;
+input 	shift1_1;
+input 	A2_1;
+input 	A0_1;
+input 	A0_0;
+input 	shift1_0;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_12 g0(
+	.out(\g0|G0|out~0_combout ),
+	.comb(comb),
+	.out1(\g0|G1|out~1_combout ),
+	.shift1_1(shift1_1),
+	.A2_1(A2_1),
+	.shift1_0(shift1_0),
+	.A2_0(A2_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_13 g1(
+	.comb(comb),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.shift1_1(shift1_1),
+	.A0_1(A0_1),
+	.A0_0(A0_0),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_6 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~1_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_12 (
+	out,
+	comb,
+	out1,
+	shift1_1,
+	A2_1,
+	shift1_0,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	comb;
+output 	out1;
+input 	shift1_1;
+input 	A2_1;
+input 	shift1_0;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_18 G0(
+	.out(out),
+	.shift1_1(shift1_1),
+	.A2_1(A2_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_18 G1(
+	.comb(comb),
+	.out(out1),
+	.A2_1(A2_1),
+	.shift1_0(shift1_0),
+	.A2_0(A2_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_18 (
+	out,
+	shift1_1,
+	A2_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	shift1_1;
+input 	A2_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y3_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[1]~input_o  & ((out) # (\A2[1]~input_o ))) # (!\shift1[1]~input_o  & (out & \A2[1]~input_o ))
+
+	.dataa(gnd),
+	.datab(shift1_1),
+	.datac(out),
+	.datad(A2_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_18 (
+	comb,
+	out,
+	A2_1,
+	shift1_0,
+	A2_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	A2_1;
+input 	shift1_0;
+input 	A2_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N6
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (\A2[0]~input_o ))))
+
+	.dataa(out),
+	.datab(comb),
+	.datac(\out~0_combout ),
+	.datad(A2_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF3F2;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((\A2[0]~input_o ) # (\A2[1]~input_o )))) # (!out & (\shift1[0]~input_o  & ((\A2[1]~input_o ))))
+
+	.dataa(shift1_0),
+	.datab(out),
+	.datac(A2_0),
+	.datad(A2_1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_13 (
+	comb,
+	out,
+	out1,
+	shift1_1,
+	A0_1,
+	A0_0,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	shift1_1;
+input 	A0_1;
+input 	A0_0;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_19 G0(
+	.out(out1),
+	.A0_1(A0_1),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_19 G1(
+	.comb(comb),
+	.out(out),
+	.shift1_1(shift1_1),
+	.A0_1(A0_1),
+	.A0_0(A0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_19 (
+	out,
+	A0_1,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A0_1;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y3_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[0]~input_o  & ((out) # (\A0[1]~input_o ))) # (!\shift1[0]~input_o  & (out & \A0[1]~input_o ))
+
+	.dataa(gnd),
+	.datab(shift1_0),
+	.datac(out),
+	.datad(A0_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_19 (
+	comb,
+	out,
+	shift1_1,
+	A0_1,
+	A0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	shift1_1;
+input 	A0_1;
+input 	A0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N28
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (\A0[0]~input_o ))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(comb),
+	.datad(A0_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hAFAE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N12
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A0[1]~input_o  & ((\shift1[1]~input_o ) # ((out)))) # (!\A0[1]~input_o  & (((\A0[0]~input_o  & out))))
+
+	.dataa(A0_1),
+	.datab(shift1_1),
+	.datac(A0_0),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFA88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_6 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_20 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_20 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_20 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y3_N26
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_20 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N14
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(out),
+	.datab(\out~0_combout ),
+	.datac(out3),
+	.datad(out4),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFECC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y3_N16
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out1),
+	.datab(out3),
+	.datac(out),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_7 (
+	out,
+	out1,
+	comb,
+	out2,
+	out3,
+	out4,
+	out5,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	comb;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_AND_15 g1(
+	.comb(comb),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.out2(out2),
+	.out3(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_7 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_14 g0(
+	.comb(comb),
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.out2(out4),
+	.out3(out5),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_14 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_21 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_21 G0(
+	.out(out1),
+	.out1(out2),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_21 (
+	out,
+	out1,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift0[1]~input_o  & ((out) # (out))) # (!\shift0[1]~input_o  & (out & out))
+
+	.dataa(gnd),
+	.datab(shift0_1),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_21 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y4_N6
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (out))))
+
+	.dataa(out),
+	.datab(out2),
+	.datac(\out~0_combout ),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF0FE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y4_N22
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (out)))) # (!out & (\shift0[0]~input_o  & ((out))))
+
+	.dataa(out),
+	.datab(shift0_0),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_15 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_22 G0(
+	.out(out1),
+	.out1(out2),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_22 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_22 (
+	out,
+	out1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (\shift0[0]~input_o ))) # (!out & (out & \shift0[0]~input_o ))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(out1),
+	.datad(shift0_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_22 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y4_N26
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (out))))
+
+	.dataa(out2),
+	.datab(out),
+	.datac(\out~0_combout ),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF0FE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y4_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (\shift0[1]~input_o )))) # (!out & (out & (out)))
+
+	.dataa(out2),
+	.datab(out1),
+	.datac(out),
+	.datad(shift0_1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hECE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_7 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_23 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_23 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_23 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y4_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out1),
+	.datab(out),
+	.datac(gnd),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEE88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_23 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y4_N28
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(out),
+	.datab(out2),
+	.datac(\out~0_combout ),
+	.datad(out4),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCF8;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y4_N16
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out),
+	.datab(out4),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEA8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_8 (
+	out,
+	out1,
+	comb,
+	comb1,
+	out2,
+	out3,
+	out4,
+	out5,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	comb;
+input 	comb1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_OR_8 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_16 g0(
+	.comb(comb),
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.out2(out4),
+	.out3(out5),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_17 g1(
+	.comb(comb1),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.out2(out2),
+	.out3(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_16 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_24 G0(
+	.out(out1),
+	.out1(out2),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_24 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_24 (
+	out,
+	out1,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift0[1]~input_o ) # (out))) # (!out & (\shift0[1]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(shift0_1),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_24 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y3_N26
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (out))))
+
+	.dataa(out),
+	.datab(comb),
+	.datac(\out~0_combout ),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF3F2;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N16
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (out)))) # (!out & (\shift0[0]~input_o  & ((out))))
+
+	.dataa(shift0_0),
+	.datab(out),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_17 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_25 G0(
+	.out(out1),
+	.out1(out3),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_25 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_25 (
+	out,
+	out1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y3_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift0[0]~input_o ) # (out))) # (!out & (\shift0[0]~input_o  & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_25 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y3_N22
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((comb1 & out))
+
+	.dataa(gnd),
+	.datab(comb),
+	.datac(\out~0_combout ),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N12
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((\shift0[1]~input_o ) # ((\shift0[0]~input_o )))) # (!out & (\shift0[1]~input_o  & ((out))))
+
+	.dataa(out1),
+	.datab(shift0_1),
+	.datac(shift0_0),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hECA8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_8 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_26 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_26 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_26 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X19_Y1_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(gnd),
+	.datab(out2),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_26 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y3_N8
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(out4),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEAA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out3),
+	.datab(out1),
+	.datac(out),
+	.datad(out4),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_9 (
+	out,
+	out1,
+	comb,
+	comb1,
+	comb2,
+	out2,
+	out3,
+	out4,
+	out5,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+output 	comb;
+input 	comb1;
+output 	comb2;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_AND_19 g1(
+	.comb(comb1),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.out2(out2),
+	.out3(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_9 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_18 g0(
+	.comb(comb),
+	.comb1(comb2),
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.out2(out4),
+	.out3(out5),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_18 (
+	comb,
+	comb1,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	comb1;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_27 G0(
+	.out(out1),
+	.out1(out3),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_27 G1(
+	.comb(comb),
+	.comb1(comb1),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_27 (
+	out,
+	out1,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y3_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift0[1]~input_o  & ((out) # (out))) # (!\shift0[1]~input_o  & (out & out))
+
+	.dataa(gnd),
+	.datab(shift0_1),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_27 (
+	comb,
+	comb1,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	comb1;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N0
+fiftyfivenm_lcell_comb \comb~0 (
+// Equation(s):
+// comb = (!\shift0[1]~input_o  & !\shift0[0]~input_o )
+
+	.dataa(shift0_1),
+	.datab(gnd),
+	.datac(shift0_0),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(comb),
+	.cout());
+// synopsys translate_off
+defparam \comb~0 .lut_mask = 16'h0505;
+defparam \comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N30
+fiftyfivenm_lcell_comb \comb~1 (
+// Equation(s):
+// comb1 = (out) # ((\shift0[1]~input_o ) # ((\shift0[0]~input_o ) # (out)))
+
+	.dataa(out1),
+	.datab(shift0_1),
+	.datac(shift0_0),
+	.datad(out2),
+	.cin(gnd),
+	.combout(comb1),
+	.cout());
+// synopsys translate_off
+defparam \comb~1 .lut_mask = 16'hFFFE;
+defparam \comb~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N20
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((comb1 & out))
+
+	.dataa(\out~0_combout ),
+	.datab(comb1),
+	.datac(gnd),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEAA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((\shift0[1]~input_o ) # ((\shift0[0]~input_o )))) # (!out & (((\shift0[0]~input_o  & out))))
+
+	.dataa(out1),
+	.datab(shift0_1),
+	.datac(shift0_0),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF8A8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_19 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_28 G0(
+	.out(out1),
+	.out1(out3),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_28 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_28 (
+	out,
+	out1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y3_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift0[0]~input_o ) # (out))) # (!out & (\shift0[0]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_28 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N24
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & comb))
+
+	.dataa(gnd),
+	.datab(\out~0_combout ),
+	.datac(out),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCCC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\shift0[1]~input_o  & ((out) # ((out)))) # (!\shift0[1]~input_o  & (((\shift0[0]~input_o  & out))))
+
+	.dataa(shift0_1),
+	.datab(out2),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFA88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_9 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_29 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_29 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_29 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y3_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(gnd),
+	.datab(out2),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_29 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y3_N4
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(out2),
+	.datac(out),
+	.datad(out4),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y3_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out1),
+	.datab(out4),
+	.datac(out),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_10 (
+	out,
+	out1,
+	comb,
+	comb1,
+	out2,
+	out3,
+	out4,
+	out5,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	comb;
+output 	comb1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g1|G1|out~1_combout ;
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+
+
+THDR_AND_20 g0(
+	.comb(comb1),
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.out2(out4),
+	.out3(out5),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_21 g1(
+	.comb(comb),
+	.out(\g1|G1|out~1_combout ),
+	.out1(\g1|G0|out~0_combout ),
+	.out2(out2),
+	.out3(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_10 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g1|G1|out~1_combout ),
+	.out3(\g0|G1|out~1_combout ),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g1|G0|out~0_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_20 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_30 G0(
+	.out(out1),
+	.out1(out3),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_30 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_30 (
+	out,
+	out1,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y3_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift0[1]~input_o  & ((out) # (out))) # (!\shift0[1]~input_o  & (out & out))
+
+	.dataa(shift0_1),
+	.datab(gnd),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_30 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N16
+fiftyfivenm_lcell_comb \comb~0 (
+// Equation(s):
+// comb = (\shift0[1]~input_o ) # ((out) # ((\shift0[0]~input_o ) # (out)))
+
+	.dataa(shift0_1),
+	.datab(out2),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(comb),
+	.cout());
+// synopsys translate_off
+defparam \comb~0 .lut_mask = 16'hFFFE;
+defparam \comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N18
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & comb))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(\out~0_combout ),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N22
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\shift0[0]~input_o  & (((out) # (out)))) # (!\shift0[0]~input_o  & (\shift0[1]~input_o  & ((out))))
+
+	.dataa(shift0_1),
+	.datab(out2),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_21 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift0_1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift0_1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_31 G0(
+	.out(out1),
+	.out1(out2),
+	.shift0_0(shift0_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_31 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift0_1(shift0_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_31 (
+	out,
+	out1,
+	shift0_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift0_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y3_N2
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift0[0]~input_o ) # (out))) # (!out & (\shift0[0]~input_o  & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(shift0_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_31 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift0_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift0_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N12
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb & ((out) # (out))))
+
+	.dataa(out2),
+	.datab(out),
+	.datac(\out~0_combout ),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hF0FE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (out)))) # (!out & (\shift0[1]~input_o  & ((out))))
+
+	.dataa(out),
+	.datab(shift0_1),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_10 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_32 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_32 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_32 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y3_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out1),
+	.datab(out2),
+	.datac(gnd),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEE88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_32 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N8
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(out2),
+	.datac(out),
+	.datad(out4),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEEEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out1),
+	.datab(out3),
+	.datac(out),
+	.datad(out4),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_11 (
+	out,
+	comb,
+	comb1,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	out6,
+	out7,
+	out8,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	comb;
+input 	comb1;
+input 	out1;
+input 	out2;
+output 	out3;
+input 	out4;
+output 	out5;
+input 	out6;
+input 	out7;
+input	out8;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_25 g1(
+	.out(out),
+	.comb(comb),
+	.comb1(comb1),
+	.out1(out1),
+	.out2(out4),
+	.out6(out2),
+	.out3(\g1|G1|out~0_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(out8),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_12 g2(
+	.out(out3),
+	.out1(out5),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~0_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_24 g0(
+	.comb(comb1),
+	.out(out2),
+	.out1(out4),
+	.out2(out6),
+	.out3(out7),
+	.out4(\g0|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module MUX2to1_NCL_12 (
+	out,
+	out1,
+	out2,
+	out3,
+	comb,
+	comb1,
+	out4,
+	out5,
+	out6,
+	out7,
+	out8,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+output 	comb;
+output 	comb1;
+output 	out4;
+input 	out5;
+input 	out6;
+input 	out7;
+input 	out8;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G0|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g0|G1|out~1_combout ;
+
+
+THDR_AND_22 g0(
+	.out(\g0|G0|out~0_combout ),
+	.comb(comb1),
+	.out1(\g0|G1|out~1_combout ),
+	.out2(out5),
+	.out3(out6),
+	.out4(out7),
+	.out5(out8),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_23 g1(
+	.out(out2),
+	.out1(out3),
+	.comb(comb),
+	.comb1(comb1),
+	.out2(out4),
+	.out3(\g1|G1|out~1_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(out5),
+	.out6(out7),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_11 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g0|G0|out~0_combout ),
+	.out3(\g1|G1|out~1_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g0|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_22 (
+	out,
+	comb,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	comb;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_33 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_33 G1(
+	.comb(comb),
+	.out(out1),
+	.out1(out3),
+	.out2(out4),
+	.out3(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_33 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N30
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(out2),
+	.datab(out),
+	.datac(gnd),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEE88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_33 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y2_N0
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((!comb1 & ((out) # (out))))
+
+	.dataa(comb),
+	.datab(out),
+	.datac(out3),
+	.datad(\out~0_combout ),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFF54;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y2_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & (((out) # (out)))) # (!out & (out & (out)))
+
+	.dataa(out2),
+	.datab(out),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hECE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_23 (
+	out,
+	out1,
+	comb,
+	comb1,
+	out2,
+	out3,
+	out4,
+	out5,
+	out6,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	comb;
+output 	comb1;
+output 	out2;
+output 	out3;
+output 	out4;
+input 	out5;
+input 	out6;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_34 G1(
+	.out(out),
+	.out1(out1),
+	.comb(comb),
+	.comb1(comb1),
+	.out2(out2),
+	.out3(out3),
+	.out4(out5),
+	.out5(out6),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_34 G0(
+	.out(out),
+	.out1(out4),
+	.out2(out6),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_34 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+output 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N4
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = (out1 & ((out) # (out))) # (!out1 & (out & out))
+
+	.dataa(gnd),
+	.datab(out1),
+	.datac(out),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_34 (
+	out,
+	out1,
+	comb,
+	comb1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	comb;
+output 	comb1;
+output 	out2;
+output 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X21_Y2_N16
+fiftyfivenm_lcell_comb \comb~0 (
+// Equation(s):
+// comb = (!out & !out)
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(comb),
+	.cout());
+// synopsys translate_off
+defparam \comb~0 .lut_mask = 16'h000F;
+defparam \comb~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N6
+fiftyfivenm_lcell_comb \comb~1 (
+// Equation(s):
+// comb1 = (!out & !out)
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(out4),
+	.datad(out5),
+	.cin(gnd),
+	.combout(comb1),
+	.cout());
+// synopsys translate_off
+defparam \comb~1 .lut_mask = 16'h000F;
+defparam \comb~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out2 = (out & (((!out & !out)))) # (!out & (((!out)) # (!out)))
+
+	.dataa(out),
+	.datab(out1),
+	.datac(out4),
+	.datad(out5),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'h131F;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N10
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out3 = ((out3 & ((!comb) # (!comb1)))) # (!out2)
+
+	.dataa(comb1),
+	.datab(out3),
+	.datac(comb),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out3),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'h4CFF;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_11 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_35 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_35 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_35 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y3_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out3) # (out))) # (!out & (out3 & out))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_35 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y2_N18
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out1))))
+
+	.dataa(out),
+	.datab(out3),
+	.datac(out4),
+	.datad(\out~0_combout ),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFFE0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y2_N8
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out3) # ((out1) # (out)))) # (!out & (out & ((out3) # (out1))))
+
+	.dataa(out2),
+	.datab(out3),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFEE0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_24 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+output 	out4;
+output 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_36 G0(
+	.out(out),
+	.out1(out3),
+	.out2(out4),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_36 G1(
+	.comb(comb),
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_36 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out2 = (out & ((out2) # (out))) # (!out & (out2 & out))
+
+	.dataa(out1),
+	.datab(out2),
+	.datac(gnd),
+	.datad(out),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEE88;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_36 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	out;
+input 	out1;
+input 	out2;
+output 	out3;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y2_N22
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out3 = (\out~0_combout ) # ((out3 & ((out) # (!comb1))) # (!out3 & (!comb1 & out)))
+
+	.dataa(out3),
+	.datab(\out~0_combout ),
+	.datac(comb),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out3),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hEFCE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y2_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out3) # (out)))
+
+	.dataa(out3),
+	.datab(gnd),
+	.datac(out2),
+	.datad(out),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF0A0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_25 (
+	out,
+	comb,
+	comb1,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	comb;
+input 	comb1;
+input 	out1;
+input 	out2;
+output 	out3;
+output 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_37 G1(
+	.comb(comb),
+	.comb1(comb1),
+	.out(out1),
+	.out1(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_37 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out4),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_37 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N16
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out2 = (out2 & ((out) # (out))) # (!out2 & (out & out))
+
+	.dataa(gnd),
+	.datab(out2),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_37 (
+	comb,
+	comb1,
+	out,
+	out1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+input 	comb1;
+input 	out;
+output 	out1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N12
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out1 = ((out1 & ((!comb) # (!comb1)))) # (!out2)
+
+	.dataa(out1),
+	.datab(comb1),
+	.datac(comb),
+	.datad(out),
+	.cin(gnd),
+	.combout(out1),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'h2AFF;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_12 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_38 G0(
+	.out(out1),
+	.out1(out3),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_38 G1(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_38 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X23_Y2_N26
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out3) # (out1))) # (!out & (out3 & out1))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_38 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X23_Y2_N6
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out3 & ((out) # (out2))))
+
+	.dataa(out),
+	.datab(\out~0_combout ),
+	.datac(out4),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFCEC;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X23_Y2_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out2) # ((out1) # (out2)))) # (!out & (out2 & ((out1) # (out2))))
+
+	.dataa(out),
+	.datab(out1),
+	.datac(out2),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEEE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module MUX2to1_NCL_13 (
+	out,
+	out1,
+	A3_0,
+	A3_1,
+	value_0,
+	sra_0,
+	sra_1,
+	value_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	A3_0;
+input 	A3_1;
+input 	value_0;
+input 	sra_0;
+input 	sra_1;
+input 	value_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \g0|G1|out~1_combout ;
+wire \g0|G0|out~0_combout ;
+wire \g1|G0|out~0_combout ;
+wire \g1|G1|out~1_combout ;
+
+
+THDR_AND_26 g0(
+	.out(\g0|G1|out~1_combout ),
+	.out1(\g0|G0|out~0_combout ),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.sra_0(sra_0),
+	.sra_1(sra_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_AND_27 g1(
+	.out(\g1|G0|out~0_combout ),
+	.out1(\g1|G1|out~1_combout ),
+	.value_0(value_0),
+	.sra_0(sra_0),
+	.sra_1(sra_1),
+	.value_1(value_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THDR_OR_13 g2(
+	.out(out),
+	.out1(out1),
+	.out2(\g0|G1|out~1_combout ),
+	.out3(\g0|G0|out~0_combout ),
+	.out4(\g1|G0|out~0_combout ),
+	.out5(\g1|G1|out~1_combout ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module THDR_AND_26 (
+	out,
+	out1,
+	A3_0,
+	A3_1,
+	sra_0,
+	sra_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	A3_0;
+input 	A3_1;
+input 	sra_0;
+input 	sra_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_39 G1(
+	.out(out),
+	.A3_0(A3_0),
+	.A3_1(A3_1),
+	.sra_0(sra_0),
+	.sra_1(sra_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_39 G0(
+	.out(out1),
+	.A3_1(A3_1),
+	.sra_1(sra_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_39 (
+	out,
+	A3_1,
+	sra_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A3_1;
+input 	sra_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y4_N18
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\sra[1]~input_o ) # (\A3[1]~input_o ))) # (!out & (\sra[1]~input_o  & \A3[1]~input_o ))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(sra_1),
+	.datad(A3_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_39 (
+	out,
+	A3_0,
+	A3_1,
+	sra_0,
+	sra_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	A3_0;
+input 	A3_1;
+input 	sra_0;
+input 	sra_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y4_N26
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((\A3[1]~input_o  & ((out) # (\sra[0]~input_o ))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(sra_0),
+	.datad(A3_1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEAA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y4_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\A3[0]~input_o  & ((\sra[1]~input_o ) # ((out) # (\sra[0]~input_o )))) # (!\A3[0]~input_o  & (out & ((\sra[1]~input_o ) # (\sra[0]~input_o ))))
+
+	.dataa(A3_0),
+	.datab(sra_1),
+	.datac(out),
+	.datad(sra_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_27 (
+	out,
+	out1,
+	value_0,
+	sra_0,
+	sra_1,
+	value_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	value_0;
+input 	sra_0;
+input 	sra_1;
+input 	value_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_40 G1(
+	.out(out1),
+	.value_0(value_0),
+	.sra_0(sra_0),
+	.sra_1(sra_1),
+	.value_1(value_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_40 G0(
+	.out(out),
+	.sra_0(sra_0),
+	.value_1(value_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_40 (
+	out,
+	sra_0,
+	value_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	sra_0;
+input 	value_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y4_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\value[1]~input_o ) # (\sra[0]~input_o ))) # (!out & (\value[1]~input_o  & \sra[0]~input_o ))
+
+	.dataa(out),
+	.datab(value_1),
+	.datac(sra_0),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hE8E8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_40 (
+	out,
+	value_0,
+	sra_0,
+	sra_1,
+	value_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	value_0;
+input 	sra_0;
+input 	sra_1;
+input 	value_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y4_N12
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (out & ((\value[1]~input_o ) # ((\value[0]~input_o ) # (\out~0_combout )))) # (!out & (\out~0_combout  & ((\value[1]~input_o ) # (\value[0]~input_o ))))
+
+	.dataa(out),
+	.datab(value_1),
+	.datac(value_0),
+	.datad(\out~0_combout ),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEA8;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y4_N24
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\sra[1]~input_o ) # ((\sra[0]~input_o  & ((\value[0]~input_o ) # (!\value[1]~input_o ))))
+
+	.dataa(value_0),
+	.datab(sra_1),
+	.datac(value_1),
+	.datad(sra_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hEFCC;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_13 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_41 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_41 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_41 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y4_N8
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out) # (out))) # (!out & (out & out))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_41 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y4_N22
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(out),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFAEA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y4_N10
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out) # ((out) # (out)))) # (!out & (out & ((out) # (out))))
+
+	.dataa(out3),
+	.datab(out2),
+	.datac(out),
+	.datad(out4),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_28 (
+	comb,
+	out,
+	out1,
+	shift0_1,
+	shift0_0,
+	shift1_1,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	shift0_1;
+input 	shift0_0;
+input 	shift1_1;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_42 G1(
+	.comb(comb),
+	.out(out1),
+	.shift0_1(shift0_1),
+	.shift0_0(shift0_0),
+	.shift1_1(shift1_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_42 G0(
+	.out(out),
+	.shift0_0(shift0_0),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_42 (
+	out,
+	shift0_0,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	shift0_0;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N8
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\shift1[0]~input_o  & ((out) # (\shift0[0]~input_o ))) # (!\shift1[0]~input_o  & (out & \shift0[0]~input_o ))
+
+	.dataa(shift1_0),
+	.datab(gnd),
+	.datac(out),
+	.datad(shift0_0),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_42 (
+	comb,
+	out,
+	shift0_1,
+	shift0_0,
+	shift1_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	shift0_1;
+input 	shift0_0;
+input 	shift1_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y3_N10
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((comb & (\shift0[1]~input_o  & out)) # (!comb & ((\shift0[1]~input_o ) # (out))))
+
+	.dataa(comb),
+	.datab(shift0_1),
+	.datac(\out~0_combout ),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFDF4;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y3_N26
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\shift0[0]~input_o  & ((out) # (\shift1[1]~input_o )))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(shift1_1),
+	.datad(shift0_0),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFA00;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_29 (
+	out,
+	out1,
+	out2,
+	out3,
+	rotate_1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+output 	out3;
+input 	rotate_1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_43 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.rotate_1(rotate_1),
+	.rotate_0(rotate_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_43 G0(
+	.out(out),
+	.out1(out1),
+	.rotate_1(rotate_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_43 (
+	out,
+	out1,
+	rotate_1,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	rotate_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N20
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (\rotate[1]~input_o  & ((out) # (out))) # (!\rotate[1]~input_o  & (out & out))
+
+	.dataa(rotate_1),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_43 (
+	out,
+	out1,
+	out2,
+	rotate_1,
+	rotate_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+input 	rotate_1;
+input 	rotate_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X20_Y3_N16
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out2 = (out2 & ((\rotate[1]~input_o ) # ((\rotate[0]~input_o ) # (\out~0_combout )))) # (!out2 & (\out~0_combout  & ((\rotate[1]~input_o ) # (\rotate[0]~input_o ))))
+
+	.dataa(rotate_1),
+	.datab(out2),
+	.datac(rotate_0),
+	.datad(\out~0_combout ),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEC8;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y3_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out) # ((out & ((\rotate[0]~input_o ) # (!\rotate[1]~input_o ))))
+
+	.dataa(rotate_1),
+	.datab(out),
+	.datac(rotate_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFFC4;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_30 (
+	out,
+	out1,
+	out2,
+	out3,
+	comb,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	comb;
+output 	out4;
+output 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_44 G0(
+	.out(out1),
+	.out1(out2),
+	.out2(out4),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_44 G1(
+	.out(out),
+	.out1(out1),
+	.out2(out3),
+	.comb(comb),
+	.out3(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_44 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N26
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out2 = (out2 & ((out) # (out))) # (!out2 & (out & out))
+
+	.dataa(out2),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_44 (
+	out,
+	out1,
+	out2,
+	comb,
+	out3,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+input 	out2;
+input 	comb;
+output 	out3;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y2_N26
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out3 = (\out~0_combout ) # ((out3 & ((out) # (!comb))) # (!out3 & (out & !comb)))
+
+	.dataa(out3),
+	.datab(\out~0_combout ),
+	.datac(out),
+	.datad(comb),
+	.cin(gnd),
+	.combout(out3),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hECFE;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X21_Y2_N22
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out3) # (out)))
+
+	.dataa(out3),
+	.datab(gnd),
+	.datac(out1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF0A0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_31 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+output 	out4;
+output 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_45 G0(
+	.out(out),
+	.out1(out3),
+	.out2(out4),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_45 G1(
+	.out(out),
+	.out1(out1),
+	.out2(out2),
+	.out3(out3),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_45 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+output 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N28
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out2 = (out2 & ((out) # (out))) # (!out2 & (out & out))
+
+	.dataa(gnd),
+	.datab(out2),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out2),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCC0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_45 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+input 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+output 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y3_N30
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out4 = (\out~0_combout ) # ((out & ((out4) # (out))))
+
+	.dataa(out4),
+	.datab(out2),
+	.datac(\out~0_combout ),
+	.datad(out),
+	.cin(gnd),
+	.combout(out4),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y3_N6
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out4 & ((out) # ((out) # (out)))) # (!out4 & (out & ((out) # (out))))
+
+	.dataa(out4),
+	.datab(out2),
+	.datac(out1),
+	.datad(out3),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_AND_32 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	out5,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+input 	out5;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+THAnd_46 G1(
+	.out(out1),
+	.out1(out2),
+	.out2(out3),
+	.out3(out4),
+	.out4(out5),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+TH22_46 G0(
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_46 (
+	out,
+	out1,
+	out2,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X22_Y2_N22
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((out2) # (out2))) # (!out & (out2 & out2))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(out2),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_46 (
+	out,
+	out1,
+	out2,
+	out3,
+	out4,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	out2;
+input 	out3;
+input 	out4;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X22_Y2_N2
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((out2 & ((out4) # (out))))
+
+	.dataa(out4),
+	.datab(out),
+	.datac(\out~0_combout ),
+	.datad(out2),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFEF0;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X22_Y2_N14
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out & ((out4) # ((out3) # (out2)))) # (!out & (out3 & ((out4) # (out2))))
+
+	.dataa(out4),
+	.datab(out),
+	.datac(out3),
+	.datad(out1),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFCE8;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THDR_OR_14 (
+	comb,
+	out,
+	out1,
+	out2,
+	out3,
+	shift1_1,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+output 	out1;
+input 	out2;
+input 	out3;
+input 	shift1_1;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+TH22_47 G0(
+	.out(out1),
+	.out1(out3),
+	.shift1_0(shift1_0),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+THAnd_47 G1(
+	.comb(comb),
+	.out(out),
+	.out1(out2),
+	.out2(out3),
+	.shift1_1(shift1_1),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+endmodule
+
+module TH22_47 (
+	out,
+	out1,
+	shift1_0,
+	devpor,
+	devclrn,
+	devoe);
+output 	out;
+input 	out1;
+input 	shift1_0;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+
+
+// Location: LCCOMB_X20_Y3_N12
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// out = (out & ((\shift1[0]~input_o ) # (out2))) # (!out & (\shift1[0]~input_o  & out2))
+
+	.dataa(out),
+	.datab(gnd),
+	.datac(shift1_0),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFAA0;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule
+
+module THAnd_47 (
+	comb,
+	out,
+	out1,
+	out2,
+	shift1_1,
+	devpor,
+	devclrn,
+	devoe);
+input 	comb;
+output 	out;
+input 	out1;
+input 	out2;
+input 	shift1_1;
+
+// Design Ports Information
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \out~0_combout ;
+
+
+// Location: LCCOMB_X21_Y3_N22
+fiftyfivenm_lcell_comb \out~1 (
+// Equation(s):
+// out = (\out~0_combout ) # ((comb & (out & out)) # (!comb & ((out) # (out))))
+
+	.dataa(\out~0_combout ),
+	.datab(comb),
+	.datac(out),
+	.datad(out1),
+	.cin(gnd),
+	.combout(out),
+	.cout());
+// synopsys translate_off
+defparam \out~1 .lut_mask = 16'hFBBA;
+defparam \out~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X20_Y3_N0
+fiftyfivenm_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (out2 & ((out) # (\shift1[1]~input_o )))
+
+	.dataa(gnd),
+	.datab(out),
+	.datac(shift1_1),
+	.datad(out2),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hFC00;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+endmodule

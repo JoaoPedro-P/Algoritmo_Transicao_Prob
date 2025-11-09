@@ -1,0 +1,113 @@
+1 inpt 2 0 //A0
+2 inpt 2 0 //A1
+3 inpt 2 0 //A2
+4 inpt 3 0 //A3
+5 inpt 7 0 //rotate
+6 inpt 9 0 //shift0
+7 inpt 8 0 //shift1
+8 inpt 2 0 //sra
+9 inpt 1 0 //value
+10 and 1 2 //MUX_router1_1|g0
+	2 5 
+11 and 1 2 //MUX_router1_1|g1
+	5 51 
+12 or 1 2 //MUX_router1_1|g2
+	10 11 
+13 and 1 2 //MUX_router1_2|g0
+	1 5 
+14 and 1 2 //MUX_router1_2|g1
+	5 51 
+15 or 1 2 //MUX_router1_2|g2
+	13 14 
+16 and 1 2 //MUX_router2_1|g0
+	5 30 
+17 and 1 2 //MUX_router2_1|g1
+	5 51 
+18 or 1 2 //MUX_router2_1|g2
+	16 17 
+19 and 1 2 //MUX_shifter1_1|g0
+	7 12 
+20 and 1 2 //MUX_shifter1_1|g1
+	4 7 
+21 or 4 2 //MUX_shifter1_1|g2
+	19 20 
+22 and 1 2 //MUX_shifter1_2|g0
+	15 52 
+23 and 1 2 //MUX_shifter1_2|g1
+	3 52 
+24 or 3 2 //MUX_shifter1_2|g2
+	22 23 
+25 and 1 2 //MUX_shifter1_3|g0
+	4 7 
+26 and 1 2 //MUX_shifter1_3|g1
+	2 7 
+27 or 3 2 //MUX_shifter1_3|g2
+	25 26 
+28 and 1 2 //MUX_shifter1_4|g0
+	3 7 
+29 and 1 2 //MUX_shifter1_4|g1
+	1 7 
+30 or 3 2 //MUX_shifter1_4|g2
+	28 29 
+31 and 1 2 //MUX_shifter2_1|g0
+	6 18 
+32 and 1 2 //MUX_shifter2_1|g1
+	6 21 
+33 or 1 2 //MUX_shifter2_1|g2
+	31 32 
+34 and 1 2 //MUX_shifter2_2|g0
+	6 45 
+35 and 1 2 //MUX_shifter2_2|g1
+	6 24 
+36 or 1 2 //MUX_shifter2_2|g2
+	34 35 
+37 and 1 2 //MUX_shifter2_3|g0
+	6 24 
+38 and 1 2 //MUX_shifter2_3|g1
+	6 27 
+39 or 1 2 //MUX_shifter2_3|g2
+	37 38 
+40 and 1 2 //MUX_shifter2_4|g0
+	6 27 
+41 and 1 2 //MUX_shifter2_4|g1
+	6 30 
+42 or 1 2 //MUX_shifter2_4|g2
+	40 41 
+43 and 1 2 //MUX_shifter_trojan1|g0
+	48 57 
+44 and 1 2 //MUX_shifter_trojan1|g1
+	21 57 
+45 or 1 2 //MUX_shifter_trojan1|g2
+	43 44 
+46 and 1 2 //MUX_shifter_trojan|g0
+	51 57 
+47 and 1 2 //MUX_shifter_trojan|g1
+	21 57 
+48 or 1 2 //MUX_shifter_trojan|g2
+	46 47 
+49 and 1 2 //MUX_sra|g0
+	4 8 
+50 and 1 2 //MUX_sra|g1
+	8 9 
+51 or 4 2 //MUX_sra|g2
+	49 50 
+52 or 2 2 //OutTrojan
+	7 54 
+53 and 1 2 //trojan01
+	6 7 
+54 and 1 2 //trojan02
+	5 53 
+55 and 1 2 //trojan03
+	21 24 
+56 and 1 2 //trojan04
+	27 30 
+57 and 4 2 //trojan05
+	55 56 
+58 out 0 1 //out00
+	42 
+59 out 0 1 //out10
+	39 
+60 out 0 1 //out20
+	36 
+61 out 0 1 //out30
+	33 

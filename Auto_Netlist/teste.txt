@@ -1,0 +1,263 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <sstream>
+#include <set>
+#include <regex>
+
+using namespace std;
+
+bool isWhitespaceLine(const string &line) {
+    return line.find_first_not_of(" \t\r\n") == string::npos;
+}
+
+void sortInstances(vector<tuple<string, string, string>> &instances) {
+    sort(instances.begin(), instances.end(), [](const auto &a, const auto &b) {
+        auto extractParts = [](const string &s) {
+            string clean;
+            for (char c : s) {
+                if (isalnum(c)) clean += c;
+            }
+
+            smatch match;
+            regex re("([A-Za-z]+)(\\d+)");
+            if (regex_match(clean, match, re)) {
+                return make_pair(match[1].str(), stoi(match[2]));
+            }
+
+            return make_pair(clean, -1); // fallback
+        };
+
+        auto [prefixA, numA] = extractParts(get<0>(a));
+        auto [prefixB, numB] = extractParts(get<0>(b));
+
+        if (prefixA == prefixB)
+            return numA < numB;
+        return prefixA < prefixB;
+    });
+}
+
+vector<pair<string, string>> extractInstances(const string &filename) {
+    ifstream file(filename);
+    if (!file) {
+        cerr << "Erro ao abrir o arquivo." << endl;
+        return {};
+    }
+
+    string line;
+    vector<pair<string, string>> instances;
+    bool foundLastWire = false;
+    size_t blankLines = 0;
+    bool extracting = false;
+
+    string currentInstance;
+    stringstream instanceContent;
+    string instanceType, instaceName;
+    vector<tuple<string, string, string>> tempInstances;
+
+    while (getline(file, line)) {
+        if (line.find("// Location:") != string::npos) {
+            break;
+        }
+
+        if (!extracting) {
+            if (foundLastWire) {
+                if (isWhitespaceLine(line)) {
+                    blankLines++;
+                    if (blankLines >= 2) {
+                        extracting = true;
+                    }
+                } else {
+                    blankLines = 0;
+                }
+            } else if (line.find("wire ") != string::npos) {
+                foundLastWire = true;
+                blankLines = 0;
+            }
+        } else {
+            if (line.find(");") != string::npos) {
+                instanceContent << line << endl;
+                tempInstances.emplace_back(instaceName, instanceType, instanceContent.str());
+                instanceContent.str("");
+                instanceType.clear();
+            } else if (line.find('(') != string::npos && instanceType.empty()) {
+                stringstream ss(line);
+                ss >> instanceType >> instaceName;
+                instanceContent << line << endl;
+            } else {
+                instanceContent << line << endl;
+            }
+        }
+    }
+    sortInstances(tempInstances);
+
+            for (const auto &[name, type, fullInstance] : tempInstances) {
+                instances.push_back({type, fullInstance});
+            }
+    file.close();
+    return instances;
+}
+
+bool isBaseCell(const string &instanceType) {
+    static set<string> basePrefixes = {
+        "THDR_AND", "THDR_OR", "THDR_XOR", "THDR_XNOR",
+        "THDR_NAND", "THDR_NOT", "THDR_NOR", "Full_sum_sub", "MUX2to1_NCL"
+    };
+    for (const auto &prefix : basePrefixes) {
+        if (instanceType.find(prefix) == 0)
+            return true;
+    }
+    return false;
+}
+
+string extractModuleContent(const string &filename, const string &moduleName) {
+    ifstream file(filename);
+    if (!file) {
+        cerr << "Erro ao abrir o arquivo." << endl;
+        return "";
+    }
+
+    string line;
+    stringstream moduleContent;
+    bool inModule = false;
+
+    while (getline(file, line)) {
+        if (!inModule) {
+            if (line.find("module " + moduleName) != string::npos) {
+                inModule = true;
+                moduleContent << line << endl;
+            }
+        } else {
+            moduleContent << line << endl;
+            if (line.find("endmodule") != string::npos) {
+                break;
+            }
+        }
+    }
+
+    file.close();
+    return moduleContent.str();
+}
+
+
+
+
+void resolveModules(vector<pair<string, string>> &instances, const string &filename) {
+    for (auto &instance : instances) {
+        if (!isBaseCell(instance.first)) {
+            string content = extractModuleContent(filename, instance.first);
+            if (content.empty())
+                continue;
+
+            // Procurar instâncias dentro do módulo
+            stringstream ss(content);
+            string line;
+            vector<pair<string, string>> subInstances;
+            vector<tuple<string, string, string>> tempInstances;
+
+            while (getline(ss, line)) {
+                if (line.find("module ") != string::npos)
+                    continue;
+            
+                if (line.find('(') != string::npos && line.find("wire ") == string::npos) {
+                    stringstream ls(line);
+                    string type, name;
+                    ls >> type >> name;
+            
+                    if (isBaseCell(type)) {
+                        string fullInstance = line;
+                        while (line.find(");") == string::npos && getline(ss, line)) {
+                            fullInstance += "\n" + line;
+                        }
+                        tempInstances.emplace_back(name, type, fullInstance);
+                    }
+                }
+            }
+
+            sortInstances(tempInstances);
+
+            for (const auto &[name, type, fullInstance] : tempInstances) {
+                subInstances.push_back({type, fullInstance});
+            }
+
+            if (!subInstances.empty()) {
+                resolveModules(subInstances, filename);
+                stringstream resolvedContent;
+                for (const auto &sub : subInstances) {
+                    resolvedContent << "// Instância resolvida de " << sub.first << endl;
+                    resolvedContent << sub.second << endl;
+                }
+                instance.second = resolvedContent.str();
+            } else {
+                // Repetir processo de extração de subinstâncias mesmo se vazio
+                vector<pair<string, string>> deeperInstances;
+
+                stringstream deepSS(content);
+                string deepLine;
+                while (getline(deepSS, deepLine)) {
+                    if (deepLine.find("module ") != string::npos)
+                        continue;
+
+                    if (deepLine.find('(') != string::npos && deepLine.find("wire ") == string::npos) {
+                        stringstream ls(deepLine);
+                        string type;
+                        ls >> type;
+
+                        // Pega tipo após a palavra "module", se aplicável
+                        if (type == "module")
+                            ls >> type;
+
+                        string fullInstance = deepLine;
+                        while (deepLine.find(");") == string::npos && getline(deepSS, deepLine)) {
+                            fullInstance += "\n" + deepLine;
+                        }
+                        deeperInstances.push_back({type, fullInstance});
+                    }
+                }
+
+                if (!deeperInstances.empty()) {
+                    resolveModules(deeperInstances, filename);
+                    stringstream resolvedContent;
+                    for (const auto &sub : deeperInstances) {
+                        resolvedContent << "// Instância resolvida de " << sub.first << endl;
+                        resolvedContent << sub.second << endl;
+                    }
+                    instance.second = resolvedContent.str();
+                } else {
+                    instance.second = content;
+                }
+            }
+        }
+    }
+}
+
+
+
+int main(int argc, char* argv[]) {
+
+    vector<pair<string, string>> extractedInstances = extractInstances("ULA.vo");
+
+    if (extractedInstances.empty()) {
+        cerr << "Nenhuma instância encontrada." << endl;
+        return 1;
+    }
+
+    resolveModules(extractedInstances, "ULA.vo");
+
+    ofstream outputFile("output.txt");
+    if (!outputFile) {
+        cerr << "Erro ao criar o arquivo de saída." << endl;
+        return 1;
+    }
+
+    for (const auto &pair : extractedInstances) {
+        outputFile << "Instância: " << pair.first << endl;
+        outputFile << pair.second << endl;
+    }
+
+    outputFile.close();
+    cout << "Conteúdo extraído e módulos resolvidos salvos em output.txt" << endl;
+
+    return 0;
+}

@@ -1,0 +1,2287 @@
+Instância topo da hierarquia: ULA
+inputs:
+A = A
+B = B
+CarryIn = CarryIn
+Sel0 = Sel0
+Sel1 = Sel1
+
+outputs:
+Neg[0] = \negDetector|g11|G0|out~0_combout
+Neg[1] = \negDetector|g11|G1|out~1_combout
+Out[0] = \muxOut0|Mux2|gMUX2|G0|out~0_combout
+Out[1] = \muxOut0|Mux2|gMUX2|G1|out~1_combout
+Out[2] = \muxOut1|Mux2|gMUX2|G0|out~0_combout
+Out[3] = \muxOut1|Mux2|gMUX2|G1|out~1_combout
+Out[4] = \muxOut2|Mux2|gMUX2|G0|out~0_combout
+Out[5] = \muxOut2|Mux2|gMUX2|G1|out~1_combout
+Out[6] = \muxOut3|Mux2|gMUX2|G0|out~0_combout
+Out[7] = \muxOut3|Mux2|gMUX2|G1|out~1_combout
+Out[8] = \muxOut4|Mux2|gMUX2|G0|out~0_combout
+Out[9] = \muxOut4|Mux2|gMUX2|G1|out~1_combout
+Overflow[0] = \over|gOver8|G0|out~0_combout
+Overflow[1] = \over|gOver8|G1|out~1_combout
+Zero[0] = \zero|gZero3|G1|out~1_combout
+Zero[1] = \zero|gZero3|G0|out~0_combout
+
+// Instância resolvida de THDR_AND_116
+THDR_AND_116 A0(
+	.out(\A0|G0|out~0_combout ),
+	.comb(\AX0|G0|comb~0_combout ),
+	.comb1(\AX0|G0|comb~1_combout ),
+	.out1(\A0|G1|out~0_combout ),
+	.out2(\A0|G1|out~1_combout ),
+	.A_1(\A[1]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.A_0(\A[0]~input_o ),
+	.B_0(\B[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_AND_117
+THDR_AND_117 A1(
+	.out(\A1|G0|out~0_combout ),
+	.comb(\AX1|G0|comb~0_combout ),
+	.comb1(\AX1|G0|comb~1_combout ),
+	.out1(\A1|G1|out~0_combout ),
+	.out2(\A1|G1|out~1_combout ),
+	.A_3(\A[3]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.A_2(\A[2]~input_o ),
+	.B_2(\B[2]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_AND_118
+THDR_AND_118 A2(
+	.out(\A2|G0|out~0_combout ),
+	.comb(\AX2|G0|comb~0_combout ),
+	.comb1(\AX2|G0|comb~1_combout ),
+	.out1(\A2|G1|out~0_combout ),
+	.out2(\A2|G1|out~1_combout ),
+	.A_5(\A[5]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.A_4(\A[4]~input_o ),
+	.B_4(\B[4]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_AND_119
+THDR_AND_119 A3(
+	.out(\A3|G0|out~0_combout ),
+	.comb(\AX3|G0|comb~0_combout ),
+	.comb1(\AX3|G0|comb~1_combout ),
+	.out1(\A3|G1|out~0_combout ),
+	.out2(\A3|G1|out~1_combout ),
+	.A_7(\A[7]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.A_6(\A[6]~input_o ),
+	.B_6(\B[6]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_AND_120
+THDR_AND_120 A4(
+	.comb(\over|gOver2|G0|comb~1_combout ),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\A4|G1|out~1_combout ),
+	.out2(\A4|G1|out~2_combout ),
+	.out3(\A4|G0|out~0_combout ),
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.B_8(\B[8]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_XOR_2
+THDR_XOR_2 AX0(
+	.comb(\AX0|G0|comb~0_combout ),
+	.comb1(\AX0|G0|comb~1_combout ),
+	.out(\AX0|G0|out~1_combout ),
+	.out1(\AX0|G1|out~1_combout ),
+	.A_1(\A[1]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.A_0(\A[0]~input_o ),
+	.B_0(\B[0]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_XOR_3
+THDR_XOR_3 AX1(
+	.comb(\AX1|G0|comb~0_combout ),
+	.comb1(\AX1|G0|comb~1_combout ),
+	.out(\AX1|G0|out~1_combout ),
+	.out1(\AX1|G1|out~1_combout ),
+	.A_3(\A[3]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.A_2(\A[2]~input_o ),
+	.B_2(\B[2]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_XOR_4
+THDR_XOR_4 AX2(
+	.comb(\AX2|G0|comb~0_combout ),
+	.comb1(\AX2|G0|comb~1_combout ),
+	.out(\AX2|G0|out~1_combout ),
+	.out1(\AX2|G1|out~1_combout ),
+	.A_5(\A[5]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.A_4(\A[4]~input_o ),
+	.B_4(\B[4]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_XOR_5
+THDR_XOR_5 AX3(
+	.comb(\AX3|G0|comb~0_combout ),
+	.comb1(\AX3|G0|comb~1_combout ),
+	.out(\AX3|G0|out~1_combout ),
+	.out1(\AX3|G1|out~1_combout ),
+	.A_7(\A[7]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.A_6(\A[6]~input_o ),
+	.B_6(\B[6]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_XOR_6
+THDR_XOR_6 AX4(
+	.comb(\over|gOver2|G0|comb~1_combout ),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\AX4|G1|out~1_combout ),
+	.out2(\AX4|G0|out~1_combout ),
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.B_8(\B[8]~input_o ),
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Instância resolvida de THDR_AND_46
+THDR_AND_46 Op0|SS0|Gout0 (
+	.A_0(\A[0]~input_o ),
+	.A_1(\A[1]~input_o ),
+	.B_0(\B[0]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.comb(\AX0|G0|comb~0_combout ),
+	.comb1(\AX0|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout0|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_47
+THDR_AND_47 Op0|SS0|Gout1 (
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout1|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout0|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout0|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_54
+THDR_AND_54 Op0|SS0|Gout2 (
+	.A_1(\A[1]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.comb(\AX0|G0|comb~0_combout ),
+	.comb1(\AX0|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A0|G1|out~0_combout ),
+	.out1(\Op0|SS0|Gout2|G1|out~0_combout ),
+	.out2(\Op0|SS0|Gout2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_55
+THDR_AND_55 Op0|SS0|Gout3 (
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout3|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout2|G1|out~0_combout ),
+	.out2(\Op0|SS0|Gout2|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_56
+THDR_AND_56 Op0|SS0|Gout4 (
+	.A_0(\A[0]~input_o ),
+	.A_1(\A[1]~input_o ),
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.comb(\AX0|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout7|G1|out~0_combout ),
+	.out1(\Op0|SS0|Gout4|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_57
+THDR_AND_57 Op0|SS0|Gout5 (
+	.B_0(\B[0]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout5|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout5|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout4|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_58
+THDR_AND_58 Op0|SS0|Gout6 (
+	.A_0(\A[0]~input_o ),
+	.A_1(\A[1]~input_o ),
+	.B_0(\B[0]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.comb(\AX0|G0|comb~0_combout ),
+	.comb1(\AX0|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_59
+THDR_AND_59 Op0|SS0|Gout7 (
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout7|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout6|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout6|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout7|G1|out~0_combout ),
+	.out4(\Op0|SS0|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_25
+THDR_OR_25 Op0|SS0|Gout8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout8|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout8|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout1|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout3|G0|out~0_combout ),
+	.out4(\Op0|SS0|Gout1|G1|out~1_combout ),
+	.out5(\Op0|SS0|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_26
+THDR_OR_26 Op0|SS0|Gout9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout9|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout9|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout5|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout5|G0|out~0_combout ),
+	.out4(\Op0|SS0|Gout7|G0|out~0_combout ),
+	.out5(\Op0|SS0|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_20
+THDR_OR_20 Op0|SS0|Gout10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout10|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout10|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout8|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout9|G0|out~0_combout ),
+	.out4(\Op0|SS0|Gout9|G1|out~1_combout ),
+	.out5(\Op0|SS0|Gout8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_48
+THDR_AND_48 Op0|SS0|Gout11 (
+	.B_0(\B[0]~input_o ),
+	.B_1(\B[1]~input_o ),
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.comb(\AX0|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout7|G1|out~0_combout ),
+	.out1(\Op0|SS0|Gout11|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout11|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_49
+THDR_AND_49 Op0|SS0|Gout12 (
+	.A_0(\A[0]~input_o ),
+	.A_1(\A[1]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout12|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout12|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_50
+THDR_AND_50 Op0|SS0|Gout13 (
+	.CarryIn_0(\CarryIn[0]~input_o ),
+	.CarryIn_1(\CarryIn[1]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout13|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout12|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout12|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_51
+THDR_AND_51 Op0|SS0|Gout14 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout4|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout4|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout14|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout14|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_52
+THDR_AND_52 Op0|SS0|Gout15 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS0|Gout6|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_53
+THDR_AND_53 Op0|SS0|Gout16 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout2|G1|out~0_combout ),
+	.out1(\Op0|SS0|Gout2|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout16|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_21
+THDR_OR_21 Op0|SS0|Gout17 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout17|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout17|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout11|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout11|G0|out~0_combout ),
+	.out4(\Op0|SS0|Gout13|G0|out~0_combout ),
+	.out5(\Op0|SS0|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_22
+THDR_OR_22 Op0|SS0|Gout18 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout18|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout18|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout14|G1|out~1_combout ),
+	.out4(\Op0|SS0|Gout14|G0|out~0_combout ),
+	.out5(\Op0|SS0|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_23
+THDR_OR_23 Op0|SS0|Gout19 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout19|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout19|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout18|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout16|G1|out~1_combout ),
+	.out4(\Op0|SS0|Gout18|G1|out~1_combout ),
+	.out5(\Op0|SS0|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_24
+THDR_OR_24 Op0|SS0|Gout20 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout19|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout17|G0|out~0_combout ),
+	.out4(\Op0|SS0|Gout19|G1|out~1_combout ),
+	.out5(\Op0|SS0|Gout17|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_60
+THDR_AND_60 Op0|SS1|Gout0 (
+	.A_2(\A[2]~input_o ),
+	.A_3(\A[3]~input_o ),
+	.B_2(\B[2]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.comb(\AX1|G0|comb~0_combout ),
+	.comb1(\AX1|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout0|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_61
+THDR_AND_61 Op0|SS1|Gout1 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout1|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout0|G0|out~0_combout ),
+	.out3(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout0|G1|out~1_combout ),
+	.out5(\Op0|SS1|Gout1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_68
+THDR_AND_68 Op0|SS1|Gout2 (
+	.A_3(\A[3]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.comb(\AX1|G0|comb~0_combout ),
+	.comb1(\AX1|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A1|G1|out~0_combout ),
+	.out1(\Op0|SS1|Gout2|G1|out~0_combout ),
+	.out2(\Op0|SS1|Gout2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_69
+THDR_AND_69 Op0|SS1|Gout3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout3|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout2|G1|out~0_combout ),
+	.out3(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout2|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_70
+THDR_AND_70 Op0|SS1|Gout4 (
+	.A_2(\A[2]~input_o ),
+	.A_3(\A[3]~input_o ),
+	.comb(\AX1|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS1|Gout4|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_71
+THDR_AND_71 Op0|SS1|Gout5 (
+	.B_2(\B[2]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout5|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout5|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout4|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_72
+THDR_AND_72 Op0|SS1|Gout6 (
+	.A_2(\A[2]~input_o ),
+	.A_3(\A[3]~input_o ),
+	.B_2(\B[2]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.comb(\AX1|G0|comb~0_combout ),
+	.comb1(\AX1|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_73
+THDR_AND_73 Op0|SS1|Gout7 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout7|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout6|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout6|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout7|G1|out~0_combout ),
+	.out6(\Op0|SS1|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_32
+THDR_OR_32 Op0|SS1|Gout8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout8|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout8|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout1|G0|out~0_combout ),
+	.out3(\Op0|SS1|Gout3|G0|out~0_combout ),
+	.out4(\Op0|SS1|Gout1|G1|out~1_combout ),
+	.out5(\Op0|SS1|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_33
+THDR_OR_33 Op0|SS1|Gout9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout9|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout9|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout5|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout5|G0|out~0_combout ),
+	.out4(\Op0|SS1|Gout7|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_27
+THDR_OR_27 Op0|SS1|Gout10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout10|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout10|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout8|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout9|G0|out~0_combout ),
+	.out4(\Op0|SS1|Gout9|G1|out~1_combout ),
+	.out5(\Op0|SS1|Gout8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_62
+THDR_AND_62 Op0|SS1|Gout11 (
+	.B_2(\B[2]~input_o ),
+	.B_3(\B[3]~input_o ),
+	.comb(\AX1|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS1|Gout11|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout11|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_63
+THDR_AND_63 Op0|SS1|Gout12 (
+	.A_2(\A[2]~input_o ),
+	.A_3(\A[3]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout12|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout12|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_64
+THDR_AND_64 Op0|SS1|Gout13 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS0|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS0|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout13|G0|out~0_combout ),
+	.out3(\Op0|SS1|Gout12|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout12|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_65
+THDR_AND_65 Op0|SS1|Gout14 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout4|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout4|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout14|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout14|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_66
+THDR_AND_66 Op0|SS1|Gout15 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS1|Gout6|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_67
+THDR_AND_67 Op0|SS1|Gout16 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout2|G1|out~0_combout ),
+	.out1(\Op0|SS1|Gout2|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout16|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_28
+THDR_OR_28 Op0|SS1|Gout17 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout17|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout17|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout11|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout11|G0|out~0_combout ),
+	.out4(\Op0|SS1|Gout13|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_29
+THDR_OR_29 Op0|SS1|Gout18 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout18|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout18|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout14|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout14|G0|out~0_combout ),
+	.out5(\Op0|SS1|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_30
+THDR_OR_30 Op0|SS1|Gout19 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout19|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout19|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout18|G0|out~0_combout ),
+	.out3(\Op0|SS1|Gout16|G1|out~1_combout ),
+	.out4(\Op0|SS1|Gout18|G1|out~1_combout ),
+	.out5(\Op0|SS1|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_31
+THDR_OR_31 Op0|SS1|Gout20 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout19|G0|out~0_combout ),
+	.out3(\Op0|SS1|Gout17|G0|out~0_combout ),
+	.out4(\Op0|SS1|Gout19|G1|out~1_combout ),
+	.out5(\Op0|SS1|Gout17|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_74
+THDR_AND_74 Op0|SS2|Gout0 (
+	.A_4(\A[4]~input_o ),
+	.A_5(\A[5]~input_o ),
+	.B_4(\B[4]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.comb(\AX2|G0|comb~0_combout ),
+	.comb1(\AX2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout0|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_75
+THDR_AND_75 Op0|SS2|Gout1 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout1|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout0|G0|out~0_combout ),
+	.out3(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout0|G1|out~1_combout ),
+	.out5(\Op0|SS2|Gout1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_82
+THDR_AND_82 Op0|SS2|Gout2 (
+	.A_5(\A[5]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.comb(\AX2|G0|comb~0_combout ),
+	.comb1(\AX2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A2|G1|out~0_combout ),
+	.out1(\Op0|SS2|Gout2|G1|out~0_combout ),
+	.out2(\Op0|SS2|Gout2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_83
+THDR_AND_83 Op0|SS2|Gout3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout3|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout2|G1|out~0_combout ),
+	.out3(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout2|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_84
+THDR_AND_84 Op0|SS2|Gout4 (
+	.A_4(\A[4]~input_o ),
+	.A_5(\A[5]~input_o ),
+	.comb(\AX2|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS2|Gout4|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_85
+THDR_AND_85 Op0|SS2|Gout5 (
+	.B_4(\B[4]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout5|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout5|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout4|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_86
+THDR_AND_86 Op0|SS2|Gout6 (
+	.A_4(\A[4]~input_o ),
+	.A_5(\A[5]~input_o ),
+	.B_4(\B[4]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.comb(\AX2|G0|comb~0_combout ),
+	.comb1(\AX2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_87
+THDR_AND_87 Op0|SS2|Gout7 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout7|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout6|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout6|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout7|G1|out~0_combout ),
+	.out6(\Op0|SS2|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_39
+THDR_OR_39 Op0|SS2|Gout8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout8|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout8|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout1|G0|out~0_combout ),
+	.out3(\Op0|SS2|Gout3|G0|out~0_combout ),
+	.out4(\Op0|SS2|Gout1|G1|out~1_combout ),
+	.out5(\Op0|SS2|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_40
+THDR_OR_40 Op0|SS2|Gout9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout9|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout9|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout5|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout5|G0|out~0_combout ),
+	.out4(\Op0|SS2|Gout7|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_34
+THDR_OR_34 Op0|SS2|Gout10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout10|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout10|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout8|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout9|G0|out~0_combout ),
+	.out4(\Op0|SS2|Gout9|G1|out~1_combout ),
+	.out5(\Op0|SS2|Gout8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_76
+THDR_AND_76 Op0|SS2|Gout11 (
+	.B_4(\B[4]~input_o ),
+	.B_5(\B[5]~input_o ),
+	.comb(\AX2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS2|Gout11|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout11|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_77
+THDR_AND_77 Op0|SS2|Gout12 (
+	.A_4(\A[4]~input_o ),
+	.A_5(\A[5]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout12|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout12|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_78
+THDR_AND_78 Op0|SS2|Gout13 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS1|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS1|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout13|G0|out~0_combout ),
+	.out3(\Op0|SS2|Gout12|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout12|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_79
+THDR_AND_79 Op0|SS2|Gout14 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout4|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout4|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout14|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout14|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_80
+THDR_AND_80 Op0|SS2|Gout15 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS2|Gout6|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_81
+THDR_AND_81 Op0|SS2|Gout16 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout2|G1|out~0_combout ),
+	.out1(\Op0|SS2|Gout2|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout16|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_35
+THDR_OR_35 Op0|SS2|Gout17 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout17|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout17|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout11|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout11|G0|out~0_combout ),
+	.out4(\Op0|SS2|Gout13|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_36
+THDR_OR_36 Op0|SS2|Gout18 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout18|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout18|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout14|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout14|G0|out~0_combout ),
+	.out5(\Op0|SS2|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_37
+THDR_OR_37 Op0|SS2|Gout19 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout19|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout19|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout18|G0|out~0_combout ),
+	.out3(\Op0|SS2|Gout16|G1|out~1_combout ),
+	.out4(\Op0|SS2|Gout18|G1|out~1_combout ),
+	.out5(\Op0|SS2|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_38
+THDR_OR_38 Op0|SS2|Gout20 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout19|G0|out~0_combout ),
+	.out3(\Op0|SS2|Gout17|G0|out~0_combout ),
+	.out4(\Op0|SS2|Gout19|G1|out~1_combout ),
+	.out5(\Op0|SS2|Gout17|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_88
+THDR_AND_88 Op0|SS3|Gout0 (
+	.A_6(\A[6]~input_o ),
+	.A_7(\A[7]~input_o ),
+	.B_6(\B[6]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.comb(\AX3|G0|comb~0_combout ),
+	.comb1(\AX3|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout0|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_89
+THDR_AND_89 Op0|SS3|Gout1 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout1|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout0|G0|out~0_combout ),
+	.out3(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout0|G1|out~1_combout ),
+	.out5(\Op0|SS3|Gout1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_96
+THDR_AND_96 Op0|SS3|Gout2 (
+	.A_7(\A[7]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.comb(\AX3|G0|comb~0_combout ),
+	.comb1(\AX3|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A3|G1|out~0_combout ),
+	.out1(\Op0|SS3|Gout2|G1|out~0_combout ),
+	.out2(\Op0|SS3|Gout2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_97
+THDR_AND_97 Op0|SS3|Gout3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout3|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout2|G1|out~0_combout ),
+	.out3(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout2|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_98
+THDR_AND_98 Op0|SS3|Gout4 (
+	.A_6(\A[6]~input_o ),
+	.A_7(\A[7]~input_o ),
+	.comb(\AX3|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS3|Gout4|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_99
+THDR_AND_99 Op0|SS3|Gout5 (
+	.B_6(\B[6]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout5|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout5|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout4|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_100
+THDR_AND_100 Op0|SS3|Gout6 (
+	.A_6(\A[6]~input_o ),
+	.A_7(\A[7]~input_o ),
+	.B_6(\B[6]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.comb(\AX3|G0|comb~0_combout ),
+	.comb1(\AX3|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_101
+THDR_AND_101 Op0|SS3|Gout7 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout7|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout6|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout6|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout7|G1|out~0_combout ),
+	.out6(\Op0|SS3|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_46
+THDR_OR_46 Op0|SS3|Gout8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout8|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout8|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout1|G0|out~0_combout ),
+	.out3(\Op0|SS3|Gout3|G0|out~0_combout ),
+	.out4(\Op0|SS3|Gout1|G1|out~1_combout ),
+	.out5(\Op0|SS3|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_47
+THDR_OR_47 Op0|SS3|Gout9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout9|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout9|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout5|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout5|G0|out~0_combout ),
+	.out4(\Op0|SS3|Gout7|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout7|G1|out~2_combout )
+);
+// Instância resolvida de THDR_OR_41
+THDR_OR_41 Op0|SS3|Gout10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout10|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout10|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout8|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout9|G0|out~0_combout ),
+	.out4(\Op0|SS3|Gout9|G1|out~1_combout ),
+	.out5(\Op0|SS3|Gout8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_90
+THDR_AND_90 Op0|SS3|Gout11 (
+	.B_6(\B[6]~input_o ),
+	.B_7(\B[7]~input_o ),
+	.comb(\AX3|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout7|G1|out~0_combout ),
+	.out3(\Op0|SS3|Gout11|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout11|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_91
+THDR_AND_91 Op0|SS3|Gout12 (
+	.A_6(\A[6]~input_o ),
+	.A_7(\A[7]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout12|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout12|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_92
+THDR_AND_92 Op0|SS3|Gout13 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS2|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS2|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout13|G0|out~0_combout ),
+	.out3(\Op0|SS3|Gout12|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout12|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_93
+THDR_AND_93 Op0|SS3|Gout14 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout4|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout4|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout14|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout14|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_94
+THDR_AND_94 Op0|SS3|Gout15 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout6|G1|out~1_combout ),
+	.out1(\Op0|SS3|Gout6|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_95
+THDR_AND_95 Op0|SS3|Gout16 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout2|G1|out~0_combout ),
+	.out1(\Op0|SS3|Gout2|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout16|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_42
+THDR_OR_42 Op0|SS3|Gout17 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout17|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout17|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout11|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout11|G0|out~0_combout ),
+	.out4(\Op0|SS3|Gout13|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout13|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_43
+THDR_OR_43 Op0|SS3|Gout18 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout18|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout18|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout15|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout14|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout14|G0|out~0_combout ),
+	.out5(\Op0|SS3|Gout15|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_44
+THDR_OR_44 Op0|SS3|Gout19 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout19|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout19|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout18|G0|out~0_combout ),
+	.out3(\Op0|SS3|Gout16|G1|out~1_combout ),
+	.out4(\Op0|SS3|Gout18|G1|out~1_combout ),
+	.out5(\Op0|SS3|Gout16|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_45
+THDR_OR_45 Op0|SS3|Gout20 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout19|G0|out~0_combout ),
+	.out3(\Op0|SS3|Gout17|G0|out~0_combout ),
+	.out4(\Op0|SS3|Gout19|G1|out~1_combout ),
+	.out5(\Op0|SS3|Gout17|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_102
+THDR_AND_102 Op0|SS4|Gout0 (
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.B_8(\B[8]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.comb(\over|gOver2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\Op0|SS4|Gout0|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_103
+THDR_AND_103 Op0|SS4|Gout1 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout1|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout0|G0|out~0_combout ),
+	.out3(\Op0|SS3|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS4|Gout0|G1|out~1_combout ),
+	.out5(\Op0|SS4|Gout1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_110
+THDR_AND_110 Op0|SS4|Gout2 (
+	.A_9(\A[9]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.comb(\over|gOver2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\A4|G1|out~1_combout ),
+	.out2(\Op0|SS4|Gout2|G1|out~0_combout ),
+	.out3(\Op0|SS4|Gout2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_111
+THDR_AND_111 Op0|SS4|Gout3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout3|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout2|G1|out~0_combout ),
+	.out3(\Op0|SS3|Gout20|G1|out~1_combout ),
+	.out4(\Op0|SS4|Gout2|G0|out~0_combout ),
+	.out5(\Op0|SS4|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_112
+THDR_AND_112 Op0|SS4|Gout4 (
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS3|Gout20|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout20|G1|out~1_combout ),
+	.out2(\Op0|SS4|Gout4|G0|out~0_combout ),
+	.out3(\Op0|SS4|Gout4|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_113
+THDR_AND_113 Op0|SS4|Gout5 (
+	.B_8(\B[8]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout5|G0|out~0_combout ),
+	.out1(\Op0|SS4|Gout4|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout4|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout5|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_114
+THDR_AND_114 Op0|SS4|Gout6 (
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.B_8(\B[8]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.comb(\over|gOver2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\Op0|SS4|Gout6|G1|out~1_combout ),
+	.out2(\Op0|SS4|Gout6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_115
+THDR_AND_115 Op0|SS4|Gout7 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout7|G0|out~0_combout ),
+	.out1(\Op0|SS3|Gout20|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout20|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout6|G1|out~1_combout ),
+	.out4(\Op0|SS4|Gout6|G0|out~0_combout ),
+	.out5(\Op0|SS4|Gout7|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_53
+THDR_OR_53 Op0|SS4|Gout8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout8|G1|out~1_combout ),
+	.out1(\Op0|SS4|Gout8|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout1|G0|out~0_combout ),
+	.out3(\Op0|SS4|Gout3|G0|out~0_combout ),
+	.out4(\Op0|SS4|Gout1|G1|out~1_combout ),
+	.out5(\Op0|SS4|Gout3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_54
+THDR_OR_54 Op0|SS4|Gout9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout9|G0|out~0_combout ),
+	.out1(\Op0|SS4|Gout9|G1|out~1_combout ),
+	.out2(\Op0|SS4|Gout5|G0|out~0_combout ),
+	.out3(\Op0|SS4|Gout7|G0|out~0_combout ),
+	.out4(\Op0|SS4|Gout5|G1|out~1_combout ),
+	.out5(\Op0|SS4|Gout7|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_48
+THDR_OR_48 Op0|SS4|Gout10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\Op0|SS4|Gout10|G1|out~1_combout ),
+	.out1(\Op0|SS4|Gout10|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout8|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout9|G0|out~0_combout ),
+	.out4(\Op0|SS4|Gout9|G1|out~1_combout ),
+	.out5(\Op0|SS4|Gout8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND
+THDR_AND muxOut0|Mux0|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut0|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux0|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut0|Mux0|gMUX0|G1|out~1_combout ),
+	.out2(\Op0|SS0|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_1
+THDR_AND_1 muxOut0|Mux0|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut0|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux0|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut0|Mux0|gMUX1|G0|out~0_combout ),
+	.out2(\Op0|SS0|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS0|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR
+THDR_OR muxOut0|Mux0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux0|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut0|Mux0|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut0|Mux0|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut0|Mux0|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut0|Mux0|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut0|Mux0|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_2
+THDR_AND_2 muxOut0|Mux1|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux1|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut0|Mux1|gMUX0|G1|out~1_combout ),
+	.out2(\A0|G0|out~0_combout ),
+	.out3(\A0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_3
+THDR_AND_3 muxOut0|Mux1|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux1|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut0|Mux1|gMUX1|G0|out~0_combout ),
+	.out2(\AX0|G0|out~1_combout ),
+	.out3(\AX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_1
+THDR_OR_1 muxOut0|Mux1|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux1|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut0|Mux1|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut0|Mux1|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut0|Mux1|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut0|Mux1|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut0|Mux1|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_4
+THDR_AND_4 muxOut0|Mux2|gMUX0 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux2|gMUX0|G1|out~1_combout ),
+	.out1(\muxOut0|Mux2|gMUX0|G0|out~0_combout ),
+	.out2(\muxOut0|Mux1|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut0|Mux1|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_5
+THDR_AND_5 muxOut0|Mux2|gMUX1 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux2|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut0|Mux2|gMUX1|G0|out~0_combout ),
+	.out2(\muxOut0|Mux0|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut0|Mux0|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_2
+THDR_OR_2 muxOut0|Mux2|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut0|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut0|Mux2|gMUX1|G1|out~1_combout ),
+	.out3(\muxOut0|Mux2|gMUX0|G1|out~1_combout ),
+	.out4(\muxOut0|Mux2|gMUX0|G0|out~0_combout ),
+	.out5(\muxOut0|Mux2|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_6
+THDR_AND_6 muxOut1|Mux0|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut1|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux0|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut1|Mux0|gMUX0|G1|out~1_combout ),
+	.out2(\Op0|SS1|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_7
+THDR_AND_7 muxOut1|Mux0|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut1|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux0|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut1|Mux0|gMUX1|G0|out~0_combout ),
+	.out2(\Op0|SS1|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS1|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_3
+THDR_OR_3 muxOut1|Mux0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux0|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut1|Mux0|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut1|Mux0|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut1|Mux0|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut1|Mux0|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut1|Mux0|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_8
+THDR_AND_8 muxOut1|Mux1|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux1|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut1|Mux1|gMUX0|G1|out~1_combout ),
+	.out2(\A1|G0|out~0_combout ),
+	.out3(\A1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_9
+THDR_AND_9 muxOut1|Mux1|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux1|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut1|Mux1|gMUX1|G0|out~0_combout ),
+	.out2(\AX1|G0|out~1_combout ),
+	.out3(\AX1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_4
+THDR_OR_4 muxOut1|Mux1|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux1|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut1|Mux1|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut1|Mux1|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut1|Mux1|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut1|Mux1|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut1|Mux1|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_10
+THDR_AND_10 muxOut1|Mux2|gMUX0 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux2|gMUX0|G1|out~1_combout ),
+	.out1(\muxOut1|Mux2|gMUX0|G0|out~0_combout ),
+	.out2(\muxOut1|Mux1|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut1|Mux1|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_11
+THDR_AND_11 muxOut1|Mux2|gMUX1 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux2|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut1|Mux2|gMUX1|G0|out~0_combout ),
+	.out2(\muxOut1|Mux0|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut1|Mux0|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_5
+THDR_OR_5 muxOut1|Mux2|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut1|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut1|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut1|Mux2|gMUX1|G1|out~1_combout ),
+	.out3(\muxOut1|Mux2|gMUX0|G1|out~1_combout ),
+	.out4(\muxOut1|Mux2|gMUX0|G0|out~0_combout ),
+	.out5(\muxOut1|Mux2|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_12
+THDR_AND_12 muxOut2|Mux0|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut2|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux0|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut2|Mux0|gMUX0|G1|out~1_combout ),
+	.out2(\Op0|SS2|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_13
+THDR_AND_13 muxOut2|Mux0|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut2|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux0|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut2|Mux0|gMUX1|G0|out~0_combout ),
+	.out2(\Op0|SS2|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS2|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_6
+THDR_OR_6 muxOut2|Mux0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux0|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut2|Mux0|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut2|Mux0|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut2|Mux0|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut2|Mux0|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut2|Mux0|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_14
+THDR_AND_14 muxOut2|Mux1|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux1|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut2|Mux1|gMUX0|G1|out~1_combout ),
+	.out2(\A2|G0|out~0_combout ),
+	.out3(\A2|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_15
+THDR_AND_15 muxOut2|Mux1|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux1|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut2|Mux1|gMUX1|G0|out~0_combout ),
+	.out2(\AX2|G0|out~1_combout ),
+	.out3(\AX2|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_7
+THDR_OR_7 muxOut2|Mux1|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux1|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut2|Mux1|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut2|Mux1|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut2|Mux1|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut2|Mux1|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut2|Mux1|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_16
+THDR_AND_16 muxOut2|Mux2|gMUX0 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux2|gMUX0|G1|out~1_combout ),
+	.out1(\muxOut2|Mux2|gMUX0|G0|out~0_combout ),
+	.out2(\muxOut2|Mux1|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut2|Mux1|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_17
+THDR_AND_17 muxOut2|Mux2|gMUX1 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux2|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut2|Mux2|gMUX1|G0|out~0_combout ),
+	.out2(\muxOut2|Mux0|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut2|Mux0|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_8
+THDR_OR_8 muxOut2|Mux2|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut2|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut2|Mux2|gMUX1|G1|out~1_combout ),
+	.out3(\muxOut2|Mux2|gMUX0|G1|out~1_combout ),
+	.out4(\muxOut2|Mux2|gMUX0|G0|out~0_combout ),
+	.out5(\muxOut2|Mux2|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_18
+THDR_AND_18 muxOut3|Mux0|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut3|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux0|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut3|Mux0|gMUX0|G1|out~1_combout ),
+	.out2(\Op0|SS3|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_19
+THDR_AND_19 muxOut3|Mux0|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\muxOut3|Mux0|gMUX1|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux0|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut3|Mux0|gMUX1|G0|out~0_combout ),
+	.out2(\Op0|SS3|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS3|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_9
+THDR_OR_9 muxOut3|Mux0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux0|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut3|Mux0|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut3|Mux0|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut3|Mux0|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut3|Mux0|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut3|Mux0|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_20
+THDR_AND_20 muxOut3|Mux1|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux1|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut3|Mux1|gMUX0|G1|out~1_combout ),
+	.out2(\A3|G0|out~0_combout ),
+	.out3(\A3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_21
+THDR_AND_21 muxOut3|Mux1|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux1|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut3|Mux1|gMUX1|G0|out~0_combout ),
+	.out2(\AX3|G0|out~1_combout ),
+	.out3(\AX3|G1|out~1_combout )
+);
+// Instância resolvida de THDR_OR_10
+THDR_OR_10 muxOut3|Mux1|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux1|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut3|Mux1|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut3|Mux1|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut3|Mux1|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut3|Mux1|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut3|Mux1|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_22
+THDR_AND_22 muxOut3|Mux2|gMUX0 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux2|gMUX0|G1|out~1_combout ),
+	.out1(\muxOut3|Mux2|gMUX0|G0|out~0_combout ),
+	.out2(\muxOut3|Mux1|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut3|Mux1|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_23
+THDR_AND_23 muxOut3|Mux2|gMUX1 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux2|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut3|Mux2|gMUX1|G0|out~0_combout ),
+	.out2(\muxOut3|Mux0|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut3|Mux0|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_11
+THDR_OR_11 muxOut3|Mux2|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut3|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut3|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut3|Mux2|gMUX1|G1|out~1_combout ),
+	.out3(\muxOut3|Mux2|gMUX0|G1|out~1_combout ),
+	.out4(\muxOut3|Mux2|gMUX0|G0|out~0_combout ),
+	.out5(\muxOut3|Mux2|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_24
+THDR_AND_24 muxOut4|Mux0|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.comb1(\over|gOver2|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux0|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut4|Mux0|gMUX0|G1|out~1_combout ),
+	.out2(\Op0|SS4|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_25
+THDR_AND_25 muxOut4|Mux0|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.comb1(\over|gOver2|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux0|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut4|Mux0|gMUX1|G0|out~0_combout ),
+	.out2(\Op0|SS4|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_12
+THDR_OR_12 muxOut4|Mux0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux0|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut4|Mux0|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut4|Mux0|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut4|Mux0|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut4|Mux0|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut4|Mux0|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_26
+THDR_AND_26 muxOut4|Mux1|gMUX0 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux1|gMUX0|G0|out~0_combout ),
+	.out1(\muxOut4|Mux1|gMUX0|G1|out~1_combout ),
+	.out2(\A4|G1|out~2_combout ),
+	.out3(\A4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_27
+THDR_AND_27 muxOut4|Mux1|gMUX1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux1|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut4|Mux1|gMUX1|G0|out~0_combout ),
+	.out2(\AX4|G1|out~1_combout ),
+	.out3(\AX4|G0|out~1_combout )
+);
+// Instância resolvida de THDR_OR_13
+THDR_OR_13 muxOut4|Mux1|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux1|gMUX2|G1|out~1_combout ),
+	.out1(\muxOut4|Mux1|gMUX2|G0|out~0_combout ),
+	.out2(\muxOut4|Mux1|gMUX0|G0|out~0_combout ),
+	.out3(\muxOut4|Mux1|gMUX1|G1|out~1_combout ),
+	.out4(\muxOut4|Mux1|gMUX1|G0|out~0_combout ),
+	.out5(\muxOut4|Mux1|gMUX0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_28
+THDR_AND_28 muxOut4|Mux2|gMUX0 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux2|gMUX0|G1|out~1_combout ),
+	.out1(\muxOut4|Mux2|gMUX0|G0|out~0_combout ),
+	.out2(\muxOut4|Mux1|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut4|Mux1|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_29
+THDR_AND_29 muxOut4|Mux2|gMUX1 (
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux2|gMUX1|G1|out~1_combout ),
+	.out1(\muxOut4|Mux2|gMUX1|G0|out~0_combout ),
+	.out2(\muxOut4|Mux0|gMUX2|G1|out~1_combout ),
+	.out3(\muxOut4|Mux0|gMUX2|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_14
+THDR_OR_14 muxOut4|Mux2|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut4|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut4|Mux2|gMUX1|G1|out~1_combout ),
+	.out3(\muxOut4|Mux2|gMUX0|G1|out~1_combout ),
+	.out4(\muxOut4|Mux2|gMUX0|G0|out~0_combout ),
+	.out5(\muxOut4|Mux2|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_17
+THDR_OR_17 negDetector|g9 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|g9|G0|out~0_combout ),
+	.out1(\negDetector|g9|G1|out~1_combout ),
+	.out2(\negDetector|gNeg4|G1|out~1_combout ),
+	.out3(\negDetector|gNeg2|G1|out~1_combout ),
+	.out4(\negDetector|gNeg2|G0|out~0_combout ),
+	.out5(\negDetector|gNeg4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_15
+THDR_OR_15 negDetector|g10 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|g10|G0|out~0_combout ),
+	.out1(\negDetector|g10|G1|out~1_combout ),
+	.out2(\negDetector|gNeg8|G1|out~1_combout ),
+	.out3(\negDetector|gNeg6|G1|out~1_combout ),
+	.out4(\negDetector|gNeg6|G0|out~0_combout ),
+	.out5(\negDetector|gNeg8|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_16
+THDR_OR_16 negDetector|g11 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|g11|G0|out~0_combout ),
+	.out1(\negDetector|g11|G1|out~1_combout ),
+	.out2(\negDetector|g10|G0|out~0_combout ),
+	.out3(\negDetector|g9|G0|out~0_combout ),
+	.out4(\negDetector|g9|G1|out~1_combout ),
+	.out5(\negDetector|g10|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_30
+THDR_AND_30 negDetector|gNeg0 (
+	.comb(\over|gOver2|G0|comb~0_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver8|G0|out~0_combout ),
+	.out1(\over|gOver8|G1|out~1_combout ),
+	.out2(\negDetector|gNeg0|G1|out~1_combout ),
+	.out3(\negDetector|gNeg0|G0|out~0_combout ),
+	.out4(\Op0|SS4|Gout10|G1|out~1_combout ),
+	.out5(\Op0|SS4|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_31
+THDR_AND_31 negDetector|gNeg1 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver4|G1|out~0_combout ),
+	.out1(\negDetector|gNeg1|G1|out~0_combout ),
+	.out2(\negDetector|gNeg1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_32
+THDR_AND_32 negDetector|gNeg2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg2|G1|out~1_combout ),
+	.out1(\negDetector|gNeg2|G0|out~0_combout ),
+	.out2(\negDetector|gNeg0|G1|out~1_combout ),
+	.out3(\negDetector|gNeg0|G0|out~0_combout ),
+	.out4(\negDetector|gNeg1|G1|out~0_combout ),
+	.out5(\negDetector|gNeg1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_33
+THDR_AND_33 negDetector|gNeg3 (
+	.Sel0_1(\Sel0[1]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver6|G1|out~0_combout ),
+	.out1(\negDetector|gNeg3|G1|out~0_combout ),
+	.out2(\negDetector|gNeg3|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_34
+THDR_AND_34 negDetector|gNeg4 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg4|G1|out~1_combout ),
+	.out1(\negDetector|gNeg4|G0|out~0_combout ),
+	.out2(\negDetector|gNeg0|G1|out~1_combout ),
+	.out3(\negDetector|gNeg3|G1|out~0_combout ),
+	.out4(\negDetector|gNeg3|G0|out~0_combout ),
+	.out5(\negDetector|gNeg0|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_35
+THDR_AND_35 negDetector|gNeg5 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg5|G1|out~1_combout ),
+	.out1(\negDetector|gNeg5|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_36
+THDR_AND_36 negDetector|gNeg6 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg6|G1|out~1_combout ),
+	.out1(\negDetector|gNeg6|G0|out~0_combout ),
+	.out2(\AX4|G1|out~1_combout ),
+	.out3(\negDetector|gNeg5|G1|out~1_combout ),
+	.out4(\negDetector|gNeg5|G0|out~0_combout ),
+	.out5(\AX4|G0|out~1_combout )
+);
+// Instância resolvida de THDR_AND_37
+THDR_AND_37 negDetector|gNeg7 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg7|G1|out~1_combout ),
+	.out1(\negDetector|gNeg7|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_38
+THDR_AND_38 negDetector|gNeg8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\negDetector|gNeg8|G1|out~1_combout ),
+	.out1(\negDetector|gNeg8|G0|out~0_combout ),
+	.out2(\A4|G1|out~2_combout ),
+	.out3(\negDetector|gNeg7|G1|out~1_combout ),
+	.out4(\negDetector|gNeg7|G0|out~0_combout ),
+	.out5(\A4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_39
+THDR_AND_39 over|gOver0|gMUX0 (
+	.B_8(\B[8]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\over|gOver0|gMUX0|G1|out~1_combout ),
+	.out2(\over|gOver0|gMUX0|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_40
+THDR_AND_40 over|gOver0|gMUX1 (
+	.B_8(\B[8]~input_o ),
+	.B_9(\B[9]~input_o ),
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\A4|G1|out~0_combout ),
+	.out1(\over|gOver0|gMUX1|G1|out~1_combout ),
+	.out2(\over|gOver0|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_18
+THDR_OR_18 over|gOver0|gMUX2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver0|gMUX2|G0|out~0_combout ),
+	.out1(\over|gOver0|gMUX2|G1|out~1_combout ),
+	.out2(\over|gOver0|gMUX1|G1|out~1_combout ),
+	.out3(\over|gOver0|gMUX0|G1|out~1_combout ),
+	.out4(\over|gOver0|gMUX0|G0|out~0_combout ),
+	.out5(\over|gOver0|gMUX1|G0|out~0_combout )
+);
+// Instância resolvida de THDR_XOR
+THDR_XOR over|gOver1 (
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver1|G0|out~1_combout ),
+	.out1(\over|gOver1|G1|out~1_combout ),
+	.out2(\over|gOver0|gMUX2|G0|out~0_combout ),
+	.out3(\over|gOver0|gMUX2|G1|out~1_combout )
+);
+// Instância resolvida de THDR_XOR_1
+THDR_XOR_1 over|gOver2 (
+	.A_8(\A[8]~input_o ),
+	.A_9(\A[9]~input_o ),
+	.comb(\over|gOver2|G0|comb~0_combout ),
+	.comb1(\over|gOver2|G0|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver2|G1|out~1_combout ),
+	.out1(\over|gOver2|G0|out~1_combout ),
+	.out2(\Op0|SS4|Gout10|G1|out~1_combout ),
+	.out3(\Op0|SS4|Gout10|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_41
+THDR_AND_41 over|gOver3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver3|G1|out~1_combout ),
+	.out1(\over|gOver3|G0|out~0_combout ),
+	.out2(\over|gOver1|G0|out~1_combout ),
+	.out3(\over|gOver2|G1|out~1_combout ),
+	.out4(\over|gOver2|G0|out~1_combout ),
+	.out5(\over|gOver1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_42
+THDR_AND_42 over|gOver4 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver4|G1|out~0_combout ),
+	.out1(\over|gOver4|G1|out~1_combout ),
+	.out2(\over|gOver4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_43
+THDR_AND_43 over|gOver5 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver5|G1|out~1_combout ),
+	.out1(\over|gOver5|G0|out~0_combout ),
+	.out2(\over|gOver3|G1|out~1_combout ),
+	.out3(\over|gOver3|G0|out~0_combout ),
+	.out4(\over|gOver4|G1|out~1_combout ),
+	.out5(\over|gOver4|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_44
+THDR_AND_44 over|gOver6 (
+	.Sel0_0(\Sel0[0]~input_o ),
+	.Sel0_1(\Sel0[1]~input_o ),
+	.Sel1_0(\Sel1[0]~input_o ),
+	.Sel1_1(\Sel1[1]~input_o ),
+	.comb(\over|gOver6|G1|comb~0_combout ),
+	.comb1(\over|gOver6|G1|comb~1_combout ),
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver6|G1|out~0_combout ),
+	.out1(\over|gOver6|G1|out~1_combout ),
+	.out2(\over|gOver6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_45
+THDR_AND_45 over|gOver7 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver7|G1|out~1_combout ),
+	.out1(\over|gOver7|G0|out~0_combout ),
+	.out2(\over|gOver6|G1|out~1_combout ),
+	.out3(\over|gOver3|G1|out~1_combout ),
+	.out4(\over|gOver3|G0|out~0_combout ),
+	.out5(\over|gOver6|G0|out~0_combout )
+);
+// Instância resolvida de THDR_OR_19
+THDR_OR_19 over|gOver8 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\over|gOver8|G0|out~0_combout ),
+	.out1(\over|gOver8|G1|out~1_combout ),
+	.out2(\over|gOver7|G1|out~1_combout ),
+	.out3(\over|gOver5|G1|out~1_combout ),
+	.out4(\over|gOver7|G0|out~0_combout ),
+	.out5(\over|gOver5|G0|out~0_combout )
+);
+// Instância resolvida de THDR_AND_121
+THDR_AND_121 zero|gZero0 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut0|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut0|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut1|Mux2|gMUX2|G0|out~0_combout ),
+	.out3(\muxOut1|Mux2|gMUX2|G1|out~1_combout ),
+	.out4(\zero|gZero0|G0|out~0_combout ),
+	.out5(\zero|gZero0|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_122
+THDR_AND_122 zero|gZero1 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut2|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut2|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\muxOut3|Mux2|gMUX2|G0|out~0_combout ),
+	.out3(\muxOut3|Mux2|gMUX2|G1|out~1_combout ),
+	.out4(\zero|gZero1|G0|out~0_combout ),
+	.out5(\zero|gZero1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_123
+THDR_AND_123 zero|gZero2 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\zero|gZero2|G1|out~1_combout ),
+	.out1(\zero|gZero2|G0|out~0_combout ),
+	.out2(\zero|gZero0|G0|out~0_combout ),
+	.out3(\zero|gZero1|G0|out~0_combout ),
+	.out4(\zero|gZero0|G1|out~1_combout ),
+	.out5(\zero|gZero1|G1|out~1_combout )
+);
+// Instância resolvida de THDR_AND_124
+THDR_AND_124 zero|gZero3 (
+	.devclrn(devclrn),
+	.devoe(devoe),
+	.devpor(devpor),
+	.out(\muxOut4|Mux2|gMUX2|G0|out~0_combout ),
+	.out1(\muxOut4|Mux2|gMUX2|G1|out~1_combout ),
+	.out2(\zero|gZero3|G1|out~1_combout ),
+	.out3(\zero|gZero3|G0|out~0_combout ),
+	.out4(\zero|gZero2|G1|out~1_combout ),
+	.out5(\zero|gZero2|G0|out~0_combout )
+);

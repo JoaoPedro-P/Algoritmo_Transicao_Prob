@@ -1,0 +1,50 @@
+1 inpt 6 0 //A
+2 inpt 7 0 //B
+3 inpt 7 0 //C
+4 inpt 3 0 //D
+5 and 1 2 //And0
+	3 4 
+6 and 1 2 //And1
+	3 4 
+7 and 1 2 //And2
+	2 3 
+8 and 1 2 //And3
+	2 3 
+9 and 1 2 //And4
+	1 2 
+10 and 1 2 //And5
+	1 2 
+11 and 1 2 //And1TrojanOut3
+	1 2 
+12 and 1 2 //And2TrojanOut3
+	3 4 
+13 and 1 2 //And3TrojanOut3
+	11 12 
+14 or 1 2 //OR0
+	5 6 
+15 or 1 2 //OR1
+	7 8 
+16 or 1 2 //OR2
+	9 10 
+17 xor 1 2 //Or2TrojanOut3
+	1 13 
+18 xor 1 2 //OutTrojan0
+	14 21 
+19 or 1 2 //OutTrojan1
+	15 23 
+20 and 1 2 //trojan01
+	1 2 
+21 and 1 2 //trojan02
+	3 20 
+22 and 1 2 //trojan11
+	1 2 
+23 and 1 2 //trojan12
+	3 22 
+24 out 0 1 //out00
+	18 
+25 out 0 1 //out10
+	19 
+26 out 0 1 //out20
+	16 
+27 out 0 1 //out30
+	17 
