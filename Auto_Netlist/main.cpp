@@ -120,41 +120,6 @@ unordered_map<string, string> extractPortMap(const string &instanceText) {
     return portMap;
 }
 
-//Função para extração dos sinais de entrada e saída de cada módulo. Além de serem passados na instanciação do módulo, na descrição do próprio módulo os sinais também definidos. Essa função pega cada um deles
-pair<unordered_set<string>, unordered_set<string>> getModuleIOs(const string &filename, const string &moduleName) {
-    unordered_set<string> inputs, outputs;
-    ifstream file(filename);
-    if (!file) return {inputs, outputs};
-
-    string line;
-    bool inModule = false;
-    while (getline(file, line)) {
-        if (line.find("module " + moduleName) != string::npos) {
-            inModule = true;
-        } else if (inModule && line.find("endmodule") != string::npos) {
-            break;
-        } else if (inModule) {
-            smatch match;
-            regex ioRegex(R"((input|output)\s+([^;]+);)");
-            if (regex_search(line, match, ioRegex)) {
-                string type = match[1];
-                string ports = match[2];
-                stringstream ss(ports);
-                string port;
-                while (getline(ss, port, ',')) {
-                    port.erase(remove_if(port.begin(), port.end(), ::isspace), port.end());
-                    if (!port.empty()) {
-                        if (type == "input") inputs.insert(port);
-                        else outputs.insert(port);
-                    }
-                }
-            }
-        }
-    }
-
-    return {inputs, outputs};
-}
-
 //Função para extrair os nomes das entradas e saídas dos sinais e unificar os casos de vetores
 string getBaseName(const string& signalName) {
     smatch match;
@@ -400,73 +365,6 @@ void flattenAndResolve(const string& moduleType,
             flattenedInstances.push_back({instType, newInstanceText.str()});
         } else {
             flattenAndResolve(instType, globalInstName + "|", childConnections, vo_filename, flattenedInstances);
-        }
-    }
-}
-
-//Função para montar o arquivo de saída output.txt organizado como: módulo topo -> inputs/outputs -> módulos intermediários e de quem eles são instanciados
-void resolveModules(vector<pair<string, string>> &instances, const string &filename) {
-    for (auto &instance : instances) {
-        if (!isBaseCell(instance.first)) {
-            string content = extractModuleContent(filename, instance.first);
-            if (content.empty()) continue;
-
-            auto [inputs, outputs] = getModuleIOs(filename, instance.first);
-            auto portMap = extractPortMap(instance.second);
-
-            stringstream resolvedHeader;
-            resolvedHeader << "Instância: " << instance.first << endl;
-
-            resolvedHeader << "inputs:\n";
-            for (const auto &in : inputs) {
-                if (portMap.count(in)) {
-                    resolvedHeader << in << " = " << portMap[in] << endl;
-                }
-            }
-
-            resolvedHeader << "\noutputs:\n";
-            for (const auto &out : outputs) {
-                if (portMap.count(out)) {
-                    resolvedHeader << out << " = " << portMap[out] << endl;
-                }
-            }
-
-            resolvedHeader << endl;
-            stringstream ss(content);
-            string line;
-            vector<pair<string, string>> subInstances;
-            vector<tuple<string, string, string>> tempInstances;
-
-            while (getline(ss, line)) {
-                if (line.find("module ") != string::npos)
-                    continue;
-                if (line.find('(') != string::npos && line.find("wire ") == string::npos) {
-                    stringstream ls(line);
-                    string type, name;
-                    ls >> type >> name;
-
-                    if (isBaseCell(type)) {
-                        string fullInstance = line;
-                        while (line.find(");") == string::npos && getline(ss, line)) {
-                            fullInstance += "\n" + line;
-                        }
-                        tempInstances.emplace_back(name, type, fullInstance);
-                    }
-                }
-            }
-
-            sortInstances(tempInstances);
-            for (const auto &[name, type, fullInstance] : tempInstances) {
-                subInstances.push_back({type, fullInstance});
-            }
-
-            stringstream resolvedContent;
-            for (const auto &sub : subInstances) {
-                resolvedContent << "// Instância resolvida de " << sub.first << endl;
-                resolvedContent << sub.second << endl;
-            }
-
-            instance.second = resolvedHeader.str() + resolvedContent.str();
         }
     }
 }
@@ -908,7 +806,7 @@ void generateSimplifiedNetlist(const string& inputFilename, const string& output
 
 int main(int argc, char* argv[]) {
 
-    string vo_filename = "ULA.vo";
+    string vo_filename = "ULA_teste.vo";
     string intermediate_file = "output.txt";
     string final_netlist_file = "netlist_final.txt";
 
