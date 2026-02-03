@@ -1,0 +1,7 @@
+Divergent Output: Output 47 from Netlist 1 (Prob 0: 0.147348, Prob 1: 0.0505893) diverges from Output 59 from Netlist 2 (Prob 0: 0.12926, Prob 1: 0.0515247).
+
+----------------------------------------------------------------------------------------------
+
+Divergent Output: Output 48 from Netlist 1 (Prob 0: 0.140178, Prob 1: 0.0414613) diverges from Output 60 from Netlist 2 (Prob 0: 0.182379, Prob 1: 0.0219169).
+
+----------------------------------------------------------------------------------------------
